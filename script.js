@@ -1,76 +1,44 @@
-// ==========================================
-// PORTFOLIO JAVASCRIPT
-// ==========================================
+// =========================================
+// 1. CONTACT BUTTON ALERT (From your old code)
+// =========================================
+const contactButton = document.getElementById("contact-btn");
 
-// Initialize AOS (Animate on Scroll) Library
-document.addEventListener("DOMContentLoaded", function() {
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-    }
-
-    // Find the button with the id "contact-btn"
-    const contactButton = document.getElementById("contact-btn");
-
-    // Tell the button to do something when clicked
-    if (contactButton) {
-        contactButton.addEventListener("click", function() {
-            alert("Contact Divin ISHIMWE:\n\n📞 Phone: 0783370320\n📧 Email: divish250@gmail.com");
-        });
-    }
-});
-
-// Toggle Dark/Light Mode Theme
-function toggleTheme() {
-    document.body.classList.toggle('light-mode');
-    const icon = document.querySelector('#theme-toggle i');
-    if (icon) {
-        if (document.body.classList.contains('light-mode')) {
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
-        } else {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
-        }
-    }
-}
-
-// Toggle Language Dropdown Menu visibility
-function toggleDropdown() {
-    const dropdown = document.getElementById("myDropdown");
-    if (dropdown) {
-        dropdown.classList.toggle("show");
-    }
-}
-
-// Select a Language from the Dropdown and update top button
-function selectLanguage(flag, code, name) {
-    const flagElem = document.getElementById("selected-flag");
-    const codeElem = document.getElementById("selected-lang-code");
-    
-    if (flagElem) flagElem.innerText = flag;
-    if (codeElem) codeElem.innerText = code;
-    
-    // Highlight the active language in the dropdown list
-    const links = document.querySelectorAll('.dropdown-content a');
-    links.forEach(link => {
-        link.classList.remove('active');
-        if (link.innerText.includes(name)) {
-            link.classList.add('active');
-        }
+// Check if the button exists on the page before adding the click event
+if (contactButton) {
+    contactButton.addEventListener("click", function() {
+        alert("Contact Divin ISHIMWE:\n\n📞 Phone: 0783370320\n📧 Email: divish250@gmail.com");
     });
+}
+
+// =========================================
+// 2. DARK / LIGHT THEME TOGGLE
+// =========================================
+function toggleTheme() {
+    // Toggle the 'light-mode' class on the body
+    document.body.classList.toggle('light-mode');
     
-    // Close dropdown after selection
-    const dropdown = document.getElementById("myDropdown");
-    if (dropdown) {
-        dropdown.classList.remove('show');
+    // Find the icon inside the theme button
+    const icon = document.querySelector('#theme-toggle i');
+    
+    // Change the icon based on the current mode
+    if (document.body.classList.contains('light-mode')) {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    } else {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
     }
 }
 
-// Close language dropdown if user clicks outside of it
+// =========================================
+// 3. LANGUAGE DROPDOWN MENU
+// =========================================
+function toggleDropdown() {
+    // Toggle the 'show' class on the dropdown content
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks anywhere outside of it
 window.onclick = function(event) {
     if (!event.target.matches('.lang-btn') && !event.target.matches('.lang-btn *')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -81,5 +49,4 @@ window.onclick = function(event) {
             }
         }
     }
-};
-            
+}
