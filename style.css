@@ -1,299 +1,174 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Divin ISHIMWE | Portfolio</title>
-    <!-- I changed v=7 to v=99 to force your phone to load the new design -->
-    <link rel="stylesheet" href="style.css?v=99">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+/* =========================================
+   GLOBAL & HERO
+   ========================================= */
+body {
+    background-color: #05050f; 
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="top-bar">
-            <div class="top-controls">
-                <div class="dropdown">
-                    <button class="lang-btn" onclick="toggleDropdown()">
-                        🇬🇧 EN <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 5px;"></i>
-                    </button>
-                    <div class="dropdown-content" id="myDropdown">
-                        <a href="#">🇬🇧 English</a>
-                        <a href="#">🇷🇼 Kinyarwanda</a>
-                    </div>
-                </div>
-                <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">
-                    <i class="fas fa-sun"></i>
-                </button>
-            </div>
-        </div>
+.hero {
+    text-align: center;
+    padding: 20px 20px 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(circle at top, #1a1b3b 0%, #05050f 50%);
+    position: relative;
+}
 
-        <div class="profile-wrapper">
-            <img src="https://github.com/Divish-news/portfolio/raw/main/1792234860191.jpg" alt="Divin's Profile" class="hero-img">
-        </div>
+/* Top Bar (Language & Theme) */
+.top-bar { width: 100%; max-width: 800px; display: flex; justify-content: flex-end; margin-bottom: 25px; }
+.top-controls { display: flex; gap: 15px; align-items: center; }
 
-        <div class="location-badge">
-            <span class="dot"></span> Kigali, Rwanda · Open to opportunities
-        </div>
+/* Bigger Language Button */
+.lang-btn { 
+    background-color: rgba(255, 255, 255, 0.08); 
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    padding: 10px 20px; 
+    border-radius: 25px; 
+    font-size: 15px; 
+    font-weight: bold;
+    color: white; 
+    display: flex; 
+    align-items: center; 
+    cursor: pointer;
+    transition: 0.3s;
+}
+.lang-btn:hover { background-color: rgba(255, 255, 255, 0.15); }
 
-        <h1>Muraho! I am Divin ISHIMWE</h1>
-        
-        <p>Aspiring AI Specialist and Software Engineer. I am currently studying Computer Science at the University of Rwanda (UR CST). I am passionate about leveraging Artificial Intelligence, Cybersecurity, and Software Engineering to build impactful technology solutions for Rwanda and beyond.</p>
-        
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/divin-ishimwe" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/Divish-news" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:divish250@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
+/* Bigger Theme Button */
+.theme-btn { 
+    background-color: rgba(255, 255, 255, 0.08); 
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    color: white; 
+    width: 46px; 
+    height: 46px; 
+    border-radius: 50%; 
+    font-size: 18px; 
+    cursor: pointer; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    transition: 0.3s ease; 
+}
+.theme-btn:hover { background-color: rgba(255, 255, 255, 0.15); }
 
-        <div class="action-buttons">
-            <a href="contact.html" class="btn-white">Get in touch</a>
-            <a href="#experience" class="btn-outline">View Experience</a>
-        </div>
+/* Dropdown Menu */
+.dropdown { position: relative; display: inline-block; }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1e293b;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 1;
+    border-radius: 10px;
+    right: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 5px;
+}
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    text-align: left;
+}
+.dropdown-content a:hover { background-color: #334155; border-radius: 10px; }
+.show { display: block; }
 
-        <a href="#experience" class="scroll-down">
-            <p>SCROLL DOWN</p>
-            <i class="fas fa-arrow-down"></i>
-        </a>
-    </section>
+/* Profile Image */
+.profile-wrapper { width: 180px; height: 180px; border-radius: 50%; padding: 8px; border: 2px dashed rgba(139, 92, 246, 0.6); display: flex; justify-content: center; align-items: center; margin-bottom: 20px; box-shadow: 0 0 30px rgba(139, 92, 246, 0.2); }
+.hero-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid #fff; }
+.location-badge { background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 8px 18px; border-radius: 20px; font-size: 14px; color: #cbd5e1; display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+.dot { width: 8px; height: 8px; background-color: #22c55e; border-radius: 50%; }
+.hero h1 { font-size: 36px; color: #a78bfa; margin-bottom: 15px; font-weight: bold; }
+.hero p { font-size: 16px; color: #94a3b8; max-width: 600px; line-height: 1.6; margin-bottom: 30px; }
 
-    <!-- EXPERIENCE SECTION -->
-    <section class="experience-section" id="experience">
-        <p class="section-subtitle">// experience</p>
-        <h2 class="section-title">Professional Experience</h2>
-        <div class="title-underline"></div>
-        <p class="section-desc">From high school coding clubs to robotics labs — building the foundation one role at a time.</p>
+.social-icons { display: flex; gap: 15px; margin-bottom: 30px; }
+.social-icons a { color: #94a3b8; background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; border-radius: 50%; font-size: 18px; text-decoration: none; transition: 0.3s ease; }
+.social-icons a:hover { color: #a78bfa; border-color: #a78bfa; transform: translateY(-5px); }
 
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-header"><i class="fas fa-briefcase"></i> ES SUMBA</div>
-                    <h3>Computer Science Club Member</h3>
-                    <p class="date-loc"><i class="far fa-calendar"></i> Oct 2025 – 2026 &nbsp; | &nbsp; <i class="fas fa-map-marker-alt"></i> Nyamagabe, Rwanda</p>
-                    <ul class="timeline-list">
-                        <li>Led a team in developing simple web-based projects.</li>
-                        <li>Organized and facilitated coding sessions for fellow students.</li>
-                        <li>Provided technical guidance on HTML, CSS, and JavaScript fundamentals.</li>
-                    </ul>
-                </div>
-            </div>
+.action-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+.btn-white, .btn-outline { padding: 12px 25px; border-radius: 25px; font-size: 16px; font-weight: bold; text-decoration: none; transition: 0.3s ease; }
+.btn-white { background-color: white; color: black; }
+.btn-outline { background-color: transparent; color: white; border: 1px solid rgba(255, 255, 255, 0.2); }
+.scroll-down { margin-top: 40px; color: #64748b; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 12px; letter-spacing: 2px; transition: 0.3s; }
 
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-header"><i class="fas fa-briefcase"></i> ISC2</div>
-                    <h3>Cybersecurity Fundamentals Trainee</h3>
-                    <p class="date-loc"><i class="far fa-calendar"></i> Aug 2025 – Sep 2025 &nbsp; | &nbsp; <i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</p>
-                    <ul class="timeline-list">
-                        <li>Completed the Certified in Cybersecurity (CC) course.</li>
-                        <li>Gained foundational knowledge in network security and threat analysis.</li>
-                        <li>Learned incident response and security best practices.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+/* =========================================
+   EXPERIENCE & PROJECTS
+   ========================================= */
+.experience-section, .projects, .skills-section { padding: 60px 20px; max-width: 800px; margin: 0 auto; text-align: center; box-sizing: border-box; }
+.section-subtitle { color: #6366f1; font-family: monospace; font-size: 16px; margin-bottom: 10px; }
+.section-title { font-size: 32px; font-weight: bold; margin: 0 0 15px 0; }
+.title-underline { width: 60px; height: 4px; background-color: #6366f1; margin: 0 auto 20px auto; border-radius: 2px; }
+.section-desc { color: #94a3b8; font-size: 16px; margin-bottom: 50px; max-width: 500px; margin-left: auto; margin-right: auto; }
 
-    <!-- PROJECTS SECTION -->
-    <section class="projects" id="projects">
-        <h2>My Projects</h2>
-        
-        <!-- 1. MINI MARKET -->
-        <div class="project-card daniel-style">
-            <div class="card-image-container">
-                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" alt="Shopping Cart" class="project-img">
-                <span class="badge">PYTHON CLI PROJECT</span>
-            </div>
-            <div class="card-content">
-                <div class="problem-box">
-                    <strong>PROBLEM</strong> Small local shops and buyers often struggle to calculate exact totals and manage budgets quickly, leading to errors and financial loss.
-                </div>
-                <h3>Mini Market Checkout</h3>
-                <p class="description">A smart shopping cart system that calculates total costs, checks the user's budget, and gives change instantly.</p>
-                <div class="card-footer">
-                    <span class="price">Free to Use</span>
-                    <a href="https://github.com/Divish-news/about-me-python/blob/main/mini_market.py" target="_blank" class="details-btn">View Code →</a>
-                </div>
-            </div>
-        </div>
+.timeline { text-align: left; position: relative; padding-left: 30px; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 10px; bottom: 10px; width: 2px; background-color: #1e293b; }
+.timeline-item { position: relative; margin-bottom: 40px; }
+.timeline-dot { position: absolute; left: -38px; top: 5px; width: 16px; height: 16px; background-color: #05050f; border: 3px solid #6366f1; border-radius: 50%; box-shadow: 0 0 10px #6366f1; }
+.timeline-content { background-color: #0f0f11; border: 1px solid #27272a; border-radius: 15px; padding: 25px; }
+.timeline-header { color: #818cf8; font-size: 14px; font-weight: bold; letter-spacing: 1px; margin-bottom: 10px; text-transform: uppercase; }
+.timeline-content h3 { margin: 0 0 10px 0; font-size: 20px; }
+.date-loc { color: #94a3b8; font-size: 13px; margin-bottom: 15px; }
+.timeline-list { color: #cbd5e1; font-size: 14px; line-height: 1.6; padding-left: 20px; margin: 0; }
 
-        <!-- 2. ISUKU RWANDA -->
-        <div class="project-card daniel-style" style="border-left: 5px solid #22c55e;">
-            <div class="card-image-container">
-                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800&auto=format&fit=crop" alt="Clean Rwanda" class="project-img">
-                <span class="badge" style="color: #22c55e; border-color: #22c55e;">🌍 SMART CITY PROJECT</span>
-            </div>
-            <div class="card-content">
-                <div class="problem-box">
-                    <strong>PROBLEM</strong> Illegal dumping and missed waste collections in Kigali are hard to track and report, making it difficult for authorities to keep the city clean.
-                </div>
-                <h3>Isuku Rwanda</h3>
-                <p class="description">A smart platform that allows citizens to report waste locations directly to authorities for a cleaner Rwanda.</p>
-                <div class="card-footer">
-                    <span class="price" style="color: #22c55e;">In Development</span>
-                    <a href="#" class="details-btn" style="color: #22c55e; border-color: #22c55e;">Coming Soon →</a>
-                </div>
-            </div>
-        </div>
+.projects h2 { font-size: 28px; color: white; margin-bottom: 30px; }
+.project-card { background-color: #1e293b; padding: 20px; border-radius: 10px; margin-bottom: 20px; text-align: left; border-left: 5px solid #38bdf8; box-sizing: border-box; }
+.project-card h3 { margin-top: 0; color: #38bdf8; }
+.daniel-style { background-color: #0f0f11; border-radius: 20px; padding: 15px; border: 1px solid #27272a; margin-bottom: 30px; }
+.card-image-container { position: relative; width: 100%; height: 200px; }
+.project-img { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
+.badge { position: absolute; top: 15px; left: 15px; background-color: #000000; color: #4ade80; padding: 8px 15px; border-radius: 20px; font-size: 11px; font-weight: bold; border: 1px solid #27272a; }
+.card-content { padding: 15px 5px 5px 5px; }
+.card-content h3 { color: white; font-size: 22px; margin: 0 0 10px 0; }
+.description { color: #d4d4d8; font-size: 15px; line-height: 1.5; margin-bottom: 20px; }
+.card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+.price { color: #4ade80; font-weight: bold; font-size: 18px; }
+.details-btn { background-color: transparent; color: #4ade80; text-decoration: none; padding: 10px 20px; border: 1px solid #4ade80; border-radius: 10px; font-weight: bold; font-size: 14px; }
+.problem-box { background-color: #1a1508; border: 1px solid #4d3d10; color: #d4d4d8; padding: 15px; border-radius: 10px; font-size: 14px; margin-bottom: 20px; }
+.problem-box strong { color: #eab308; font-size: 12px; letter-spacing: 1px; display: block; margin-bottom: 5px; }
 
-        <!-- 3. RWANDA YOUTH OPPORTUNITIES -->
-        <div class="project-card daniel-style" style="border-left: 5px solid #eab308;">
-            <div class="card-image-container">
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" alt="Students Studying" class="project-img">
-                <span class="badge" style="color: #eab308; border-color: #eab308;">🎓 EDUCATION & JOBS</span>
-            </div>
-            <div class="card-content">
-                <div class="problem-box">
-                    <strong>PROBLEM</strong> Many talented Rwandan youth miss out on life-changing scholarships, internships, and jobs because opportunities are scattered across different websites.
-                </div>
-                <h3>Rwanda Youth Opportunities</h3>
-                <p class="description">A platform helping Rwandan youth easily find and apply for scholarships, internships, and jobs in one place.</p>
-                <div class="card-footer">
-                    <span class="price" style="color: #eab308;">Coming Soon</span>
-                    <a href="#" class="details-btn" style="color: #eab308; border-color: #eab308;">In Development →</a>
-                </div>
-            </div>
-        </div>
+/* =========================================
+   SKILLS SECTION
+   ========================================= */
+.skills-grid { display: flex; flex-direction: column; gap: 20px; text-align: left; width: 100%; }
+.skill-card { background-color: #0f0f11; border: 1px solid #27272a; border-radius: 15px; padding: 20px; box-sizing: border-box; width: 100%; }
+.skill-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; }
+.skill-title { color: #818cf8; font-size: 14px; font-weight: bold; letter-spacing: 1px; display: flex; align-items: center; gap: 8px; }
+.skill-badge { background-color: #1e1b4b; color: #a78bfa; padding: 5px 10px; border-radius: 8px; font-size: 10px; font-weight: bold; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { background-color: #18181b; border: 1px solid #27272a; color: #cbd5e1; padding: 6px 12px; border-radius: 8px; font-size: 13px; }
+.tag.highlight { color: #818cf8; border-color: #4c1d95; display: flex; align-items: center; gap: 6px; font-weight: bold; }
+.tag-dot { width: 6px; height: 6px; background-color: #818cf8; border-radius: 50%; }
 
-        <!-- 4. WATER & ELECTRICITY REPORTER -->
-        <div class="project-card daniel-style" style="border-left: 5px solid #3b82f6;">
-            <div class="card-image-container">
-                <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=800&auto=format&fit=crop" alt="Water and Electricity" class="project-img">
-                <span class="badge" style="color: #3b82f6; border-color: #3b82f6;">💧⚡ UTILITY INFRASTRUCTURE</span>
-            </div>
-            <div class="card-content">
-                <div class="problem-box" style="background-color: #0f172a; border-color: #1e3a8a; color: #cbd5e1;">
-                    <strong style="color: #3b82f6;">PROBLEM</strong> Citizens often face water shortages or damaged electricity poles but lack a direct, fast way to report these issues to authorities like WASAC or REG.
-                </div>
-                <h3>Water & Electricity Reporter</h3>
-                <p class="description">A smart reporting platform that allows citizens to report water shortages, leaking pipes, electricity outages, and damaged poles with location tracking.</p>
-                <div class="card-footer">
-                    <span class="price" style="color: #3b82f6;">Coming Soon</span>
-                    <a href="#" class="details-btn" style="color: #3b82f6; border-color: #3b82f6;">In Development →</a>
-                </div>
-            </div>
-        </div>
+/* =========================================
+   FLOATING BUTTONS & LIGHT MODE
+   ========================================= */
+.whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 15px rgba(37, 211, 102, 0.4); z-index: 100; display: flex; justify-content: center; align-items: center; text-decoration: none; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+.back-to-top { position: fixed; width: 50px; height: 50px; bottom: 100px; right: 35px; background-color: #1e293b; color: #a78bfa; border-radius: 50%; text-align: center; font-size: 20px; z-index: 99; display: flex; justify-content: center; align-items: center; text-decoration: none; border: 1px solid #27272a; }
 
-        <!-- 5. PERSONAL PORTFOLIO -->
-        <div class="project-card">
-            <h3>Personal Portfolio</h3>
-            <p>This website! Built with HTML, CSS, and JavaScript and hosted live on GitHub Pages.</p>
-            <div class="card-footer">
-                <span class="tech" style="background-color: #38bdf8; color: black; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; margin-right: 5px;">HTML</span> 
-                <span class="tech" style="background-color: #38bdf8; color: black; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; margin-right: 5px;">CSS</span> 
-                <span class="tech" style="background-color: #38bdf8; color: black; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold;">JS</span>
-            </div>
-        </div>
-    </section>
+/* Light Mode Fixes */
+body.light-mode { background-color: #f8fafc; color: #0f172a; }
+body.light-mode .hero { background: radial-gradient(circle at top, #e2e8f0 0%, #f8fafc 50%); }
+body.light-mode .location-badge, body.light-mode .lang-btn, body.light-mode .theme-btn, body.light-mode .social-icons a { background-color: #e2e8f0; border-color: #cbd5e1; color: #0f172a; }
+body.light-mode .theme-btn i { color: #0f172a; }
+body.light-mode .dropdown-content { background-color: white; border-color: #cbd5e1; }
+body.light-mode .dropdown-content a { color: #0f172a; }
+body.light-mode .dropdown-content a:hover { background-color: #f1f5f9; }
 
-    <!-- SKILLS SECTION -->
-    <section class="skills-section">
-        <p class="section-subtitle">// skills</p>
-        <h2 class="section-title">Skills & Expertise</h2>
-        <div class="title-underline"></div>
-        <p class="section-desc">Full-stack foundations, prompt engineering as a superpower, and a cybersecurity background to keep it secure.</p>
+body.light-mode .timeline-content, body.light-mode .project-card, body.light-mode .skill-card { background-color: white; border-color: #cbd5e1; }
+body.light-mode .timeline-content h3, body.light-mode .card-content h3, body.light-mode .projects h2, body.light-mode .section-title, body.light-mode .description, body.light-mode .timeline-list, body.light-mode .section-desc { color: #0f172a; }
+body.light-mode .problem-box { background-color: #fffbeb; border-color: #fde68a; color: #78350f; }
+body.light-mode .tag { background-color: #f1f5f9; border-color: #cbd5e1; color: #0f172a; }
 
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-header">
-                    <div class="skill-title"><i class="fas fa-robot"></i> AI & PROMPT</div>
-                    <span class="skill-badge">CORE EDGE</span>
-                </div>
-                <div class="skill-tags">
-                    <span class="tag highlight"><span class="tag-dot"></span>ChatGPT API</span>
-                    <span class="tag highlight"><span class="tag-dot"></span>Claude AI</span>
-                    <span class="tag highlight"><span class="tag-dot"></span>RAG</span>
-                    <span class="tag">Prompt Design</span>
-                </div>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-header">
-                    <div class="skill-title"><i class="fas fa-code"></i> LANGUAGES</div>
-                </div>
-                <div class="skill-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">C</span>
-                </div>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-header">
-                    <div class="skill-title"><i class="fas fa-database"></i> DATABASES</div>
-                </div>
-                <div class="skill-tags">
-                    <span class="tag">MySQL</span>
-                    <span class="tag">SQLite</span>
-                    <span class="tag">Python Flask</span>
-                </div>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-header">
-                    <div class="skill-title"><i class="fas fa-shield-alt"></i> CYBERSECURITY</div>
-                </div>
-                <div class="skill-tags">
-                    <span class="tag">Network Security</span>
-                    <span class="tag">Threat Analysis</span>
-                </div>
-            </div>
-
-            <div class="skill-card">
-                <div class="skill-header">
-                    <div class="skill-title"><i class="fas fa-globe"></i> LANGUAGES SPOKEN</div>
-                </div>
-                <div class="skill-tags">
-                    <span class="tag">Kinyarwanda</span>
-                    <span class="tag">English</span>
-                    <span class="tag">French</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FLOATING BUTTONS -->
-    <a href="https://wa.me/250783370320" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    
-    <a href="#" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <!-- JAVASCRIPT -->
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            const icon = document.querySelector('#theme-toggle i');
-            if (document.body.classList.contains('light-mode')) {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            } else {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            }
-        }
-
-        function toggleDropdown() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.lang-btn') && !event.target.matches('.lang-btn *')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
-
-</body>
-</html>
+/* FIXING THE INVISIBLE BUTTON IN LIGHT MODE */
+body.light-mode .btn-outline { color: #0f172a; border-color: #0f172a; }
+body.light-mode .scroll-down { color: #0f172a; }
