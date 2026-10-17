@@ -2,18 +2,16 @@
 <html>
 <head>
     <title>Divin ISHIMWE | Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=6">
+    <!-- I changed v=7 to v=99 to force your phone to load the new design -->
+    <link rel="stylesheet" href="style.css?v=99">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <!-- HERO SECTION -->
     <section class="hero">
-        
-        <!-- Top Bar -->
         <div class="top-bar">
             <div class="top-controls">
-                <!-- Language Dropdown -->
                 <div class="dropdown">
                     <button class="lang-btn" onclick="toggleDropdown()">
                         🇬🇧 EN <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 5px;"></i>
@@ -23,8 +21,6 @@
                         <a href="#">🇷🇼 Kinyarwanda</a>
                     </div>
                 </div>
-
-                <!-- Theme Button -->
                 <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">
                     <i class="fas fa-sun"></i>
                 </button>
@@ -160,10 +156,9 @@
             </div>
         </div>
 
-        <!-- 4. WATER & ELECTRICITY REPORTER (NEW) -->
+        <!-- 4. WATER & ELECTRICITY REPORTER -->
         <div class="project-card daniel-style" style="border-left: 5px solid #3b82f6;">
             <div class="card-image-container">
-                <!-- Image showing pipes and power lines -->
                 <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=800&auto=format&fit=crop" alt="Water and Electricity" class="project-img">
                 <span class="badge" style="color: #3b82f6; border-color: #3b82f6;">💧⚡ UTILITY INFRASTRUCTURE</span>
             </div>
@@ -190,7 +185,6 @@
                 <span class="tech" style="background-color: #38bdf8; color: black; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold;">JS</span>
             </div>
         </div>
-        
     </section>
 
     <!-- SKILLS SECTION -->
