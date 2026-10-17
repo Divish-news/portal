@@ -11,6 +11,9 @@
     <section class="hero">
         <div class="top-bar">
             <div class="lang-btn">🇬🇧 EN</div>
+            <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-sun"></i>
+            </button>
         </div>
 
         <div class="profile-wrapper">
@@ -159,6 +162,23 @@
     <a href="https://wa.me/250783370320" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-
+        <!-- JAVASCRIPT FOR DARK/LIGHT THEME -->
+    <script>
+        function toggleTheme() {
+            // Toggle the 'light-mode' class on the body
+            document.body.classList.toggle('light-mode');
+            
+            // Change the icon from Sun to Moon
+            const icon = document.querySelector('#theme-toggle i');
+            if (document.body.classList.contains('light-mode')) {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        }
+    </script>
+    
 </body>
     </html>
