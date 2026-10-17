@@ -192,3 +192,21 @@ body {
     background-color: #4ade80;
     color: black;
     }
+.problem-box {
+    background-color: #1a1508; /* Dark brownish background */
+    border: 1px solid #4d3d10; /* Gold border */
+    color: #d4d4d8; /* Light text */
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.problem-box strong {
+    color: #eab308; /* Bright gold "PROBLEM" text */
+    font-size: 12px;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
+}
