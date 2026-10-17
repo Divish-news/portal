@@ -99,3 +99,10 @@ button:hover {
     font-weight: bold;
     margin-right: 5px;
 }
+.project-img {
+    width: 100%;       /* Makes the image fill the width of the card */
+    height: 200px;     /* Sets a fixed height */
+    object-fit: cover; /* Prevents the image from looking stretched */
+    border-radius: 8px;/* Rounds the corners */
+    margin-bottom: 15px; /* Adds space between the image and the title */
+}
