@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Divin ISHIMWE | Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=6">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -13,7 +13,6 @@
         <!-- Top Bar -->
         <div class="top-bar">
             <div class="top-controls">
-                
                 <!-- Language Dropdown -->
                 <div class="dropdown">
                     <button class="lang-btn" onclick="toggleDropdown()">
@@ -80,7 +79,6 @@
                         <li>Led a team in developing simple web-based projects.</li>
                         <li>Organized and facilitated coding sessions for fellow students.</li>
                         <li>Provided technical guidance on HTML, CSS, and JavaScript fundamentals.</li>
-                        <li>Managed project timelines and ensured team collaboration.</li>
                     </ul>
                 </div>
             </div>
@@ -105,6 +103,7 @@
     <section class="projects" id="projects">
         <h2>My Projects</h2>
         
+        <!-- 1. MINI MARKET -->
         <div class="project-card daniel-style">
             <div class="card-image-container">
                 <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" alt="Shopping Cart" class="project-img">
@@ -123,6 +122,7 @@
             </div>
         </div>
 
+        <!-- 2. ISUKU RWANDA -->
         <div class="project-card daniel-style" style="border-left: 5px solid #22c55e;">
             <div class="card-image-container">
                 <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800&auto=format&fit=crop" alt="Clean Rwanda" class="project-img">
@@ -141,6 +141,7 @@
             </div>
         </div>
 
+        <!-- 3. RWANDA YOUTH OPPORTUNITIES -->
         <div class="project-card daniel-style" style="border-left: 5px solid #eab308;">
             <div class="card-image-container">
                 <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" alt="Students Studying" class="project-img">
@@ -159,6 +160,27 @@
             </div>
         </div>
 
+        <!-- 4. WATER & ELECTRICITY REPORTER (NEW) -->
+        <div class="project-card daniel-style" style="border-left: 5px solid #3b82f6;">
+            <div class="card-image-container">
+                <!-- Image showing pipes and power lines -->
+                <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=800&auto=format&fit=crop" alt="Water and Electricity" class="project-img">
+                <span class="badge" style="color: #3b82f6; border-color: #3b82f6;">💧⚡ UTILITY INFRASTRUCTURE</span>
+            </div>
+            <div class="card-content">
+                <div class="problem-box" style="background-color: #0f172a; border-color: #1e3a8a; color: #cbd5e1;">
+                    <strong style="color: #3b82f6;">PROBLEM</strong> Citizens often face water shortages or damaged electricity poles but lack a direct, fast way to report these issues to authorities like WASAC or REG.
+                </div>
+                <h3>Water & Electricity Reporter</h3>
+                <p class="description">A smart reporting platform that allows citizens to report water shortages, leaking pipes, electricity outages, and damaged poles with location tracking.</p>
+                <div class="card-footer">
+                    <span class="price" style="color: #3b82f6;">Coming Soon</span>
+                    <a href="#" class="details-btn" style="color: #3b82f6; border-color: #3b82f6;">In Development →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. PERSONAL PORTFOLIO -->
         <div class="project-card">
             <h3>Personal Portfolio</h3>
             <p>This website! Built with HTML, CSS, and JavaScript and hosted live on GitHub Pages.</p>
@@ -250,7 +272,6 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        // Theme Toggle
         function toggleTheme() {
             document.body.classList.toggle('light-mode');
             const icon = document.querySelector('#theme-toggle i');
@@ -263,12 +284,10 @@
             }
         }
 
-        // Language Dropdown Toggle
         function toggleDropdown() {
             document.getElementById("myDropdown").classList.toggle("show");
         }
 
-        // Close the dropdown if the user clicks outside of it
         window.onclick = function(event) {
             if (!event.target.matches('.lang-btn') && !event.target.matches('.lang-btn *')) {
                 var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -283,4 +302,4 @@
     </script>
 
 </body>
-</html>
+                                                                                                      </html>
