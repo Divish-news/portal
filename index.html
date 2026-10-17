@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Divin ISHIMWE | Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=11">
+    <link rel="stylesheet" href="style.css?v=12">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- AOS Library for smooth scroll reveal animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -14,12 +14,41 @@
         <div class="top-bar">
             <div class="top-controls">
                 <div class="dropdown">
-                    <button class="lang-btn" onclick="toggleDropdown()">
-                        🇬🇧 EN <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 5px;"></i>
+                    <button class="lang-btn" id="current-lang-btn" onclick="toggleDropdown()">
+                        <span id="selected-flag">🇬🇧</span> <span id="selected-lang-code">EN</span> 
+                        <i class="fas fa-chevron-down" style="font-size: 11px; margin-left: 6px;"></i>
                     </button>
                     <div class="dropdown-content" id="myDropdown">
-                        <a href="#">🇬🇧 English</a>
-                        <a href="#">🇷🇼 Kinyarwanda</a>
+                        <a href="#" onclick="selectLanguage('🇬🇧', 'EN', 'English'); return false;" class="active">
+                            <span class="flag">🇬🇧</span> English
+                        </a>
+                        <a href="#" onclick="selectLanguage('🇷🇼', 'RW', 'Kinyarwanda'); return false;">
+                            <span class="flag">🇷🇼</span> Kinyarwanda
+                        </a>
+                        <a href="#" onclick="selectLanguage('🇫🇷', 'FR', 'Français'); return false;">
+                            <span class="flag">🇫🇷</span> Français
+                        </a>
+                        <a href="#" onclick="selectLanguage('🇪🇸', 'ES', 'Español'); return false;">
+                            <span class="flag">🇪🇸</span> Español
+                        </a>
+                        <a href="#" onclick="selectLanguage('🇩🇪', 'DE', 'Deutsch'); return false;">
+                            <span class="flag">🇩🇪</span> Deutsch
+                        </a>
+                        <a href="#" onclick="selectLanguage('🇵🇹', 'PT', 'Português'); return false;">
+                            <span class="flag">🇵🇹</span> Português
+                        </a>
+                        <a href="#" onclick="selectLanguage('🇰🇪', 'SW', 'Kiswahili'); return false;">
+                            <span class="flag">🇰🇪</span> Kiswahili
+                        </a>
+                        <a href="#" onclick="selectLanguage('🇸🇦', 'AR', 'العربية'); return false;">
+                            <span class="flag">🇸🇦</span> العربية
+                        </a>
+                        <a href="#" onclick="selectLanguage('🇨🇳', 'ZH', '中文'); return false;">
+                            <span class="flag">🇨🇳</span> 中文
+                        </a>
+                        <a href="#" onclick="selectLanguage('🇮🇳', 'HI', 'हिन्दी'); return false;">
+                            <span class="flag">🇮🇳</span> हिन्दी
+                        </a>
                     </div>
                 </div>
                 <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">
@@ -315,43 +344,4 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- AOS JS Library Initialization -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            const icon = document.querySelector('#theme-toggle i');
-            if (document.body.classList.contains('light-mode')) {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            } else {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            }
-        }
-
-        function toggleDropdown() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.lang-btn') && !event.target.matches('.lang-btn *')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
-</body>
-    </html>
-    
+    <!-- AOS JS Library Initializati
