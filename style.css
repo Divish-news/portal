@@ -1,5 +1,5 @@
 body {
-    background-color: #0f172a; /* Dark blue background */
+    background-color: #0f172a; 
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -10,8 +10,8 @@ body {
 .hero {
     text-align: center;
     padding: 80px 20px;
-    background-color: #1a0b2e; /* Deep Purple */
-    min-height: 60vh; /* Makes it fill the screen */
+    background-color: #1a0b2e; 
+    min-height: 60vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +19,7 @@ body {
 }
 
 .hero img {
-    width: 180px; /* Bigger photo */
+    width: 180px; 
     height: 180px;
     border-radius: 50%;
     border: 4px solid #38bdf8;
@@ -27,7 +27,7 @@ body {
 }
 
 .hero h1 {
-    font-size: 36px; /* Bigger text */
+    font-size: 36px; 
     color: #38bdf8;
     margin-bottom: 10px;
 }
@@ -39,6 +39,7 @@ body {
     line-height: 1.6;
 }
 
+/* ⚠️ THIS IS THE BUTTON SECTION YOU NEED TO UPDATE ⚠️ */
 button {
     background-color: #38bdf8;
     color: black;
@@ -49,6 +50,8 @@ button {
     font-weight: bold;
     cursor: pointer;
     margin-top: 20px;
+    position: relative; /* Added for clicking */
+    z-index: 10;        /* Added to force click on mobile */
 }
 
 button:hover {
