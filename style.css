@@ -11,12 +11,11 @@ body {
 
 .hero {
     text-align: center;
-    padding: 20px 20px 40px 20px; /* Reduced bottom padding to remove big space */
+    padding: 20px 20px 40px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: radial-gradient(circle at top, #1a1b3b 0%, #05050f 50%);
-    min-height: 90vh;
 }
 
 .top-bar {
@@ -33,7 +32,6 @@ body {
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 14px;
-    cursor: pointer;
 }
 
 .profile-wrapper {
@@ -92,7 +90,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* --- SOCIAL ICONS & BUTTONS --- */
 .social-icons {
     display: flex;
     gap: 15px;
@@ -111,13 +108,13 @@ body {
     border-radius: 50%;
     font-size: 18px;
     text-decoration: none;
-    transition: 0.3s ease; /* Animation */
+    transition: 0.3s ease;
 }
 
 .social-icons a:hover {
     color: #a78bfa;
     border-color: #a78bfa;
-    transform: translateY(-5px); /* Lifts up on hover */
+    transform: translateY(-5px);
 }
 
 .action-buttons {
@@ -133,32 +130,135 @@ body {
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
-    transition: 0.3s ease; /* Animation */
+    transition: 0.3s ease;
 }
 
-.btn-white {
-    background-color: white;
-    color: black;
+.btn-white { background-color: white; color: black; }
+.btn-white:hover { background-color: #e2e8f0; transform: scale(1.05); }
+.btn-outline { background-color: transparent; color: white; border: 1px solid rgba(255, 255, 255, 0.2); }
+.btn-outline:hover { border-color: white; background-color: rgba(255, 255, 255, 0.1); transform: scale(1.05); }
+
+/* =========================================
+   EXPERIENCE SECTION (Timeline)
+   ========================================= */
+.experience-section {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.btn-white:hover {
-    background-color: #e2e8f0;
-    transform: scale(1.05);
+.section-subtitle {
+    color: #6366f1; /* Purple */
+    font-family: monospace;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
-.btn-outline {
-    background-color: transparent;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0 0 15px 0;
 }
 
-.btn-outline:hover {
-    border-color: white;
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(1.05);
+.title-underline {
+    width: 60px;
+    height: 4px;
+    background-color: #6366f1;
+    margin: 0 auto 20px auto;
+    border-radius: 2px;
 }
 
-/* --- PROJECTS SECTION --- */
+.section-desc {
+    color: #94a3b8;
+    font-size: 16px;
+    margin-bottom: 50px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeline {
+    text-align: left;
+    position: relative;
+    padding-left: 30px;
+}
+
+/* The vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background-color: #1e293b;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* The glowing dot */
+.timeline-dot {
+    position: absolute;
+    left: -38px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background-color: #05050f;
+    border: 3px solid #6366f1;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #6366f1;
+}
+
+.timeline-content {
+    background-color: #0f0f11;
+    border: 1px solid #27272a;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.timeline-header {
+    color: #818cf8;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.timeline-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+.date-loc {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.timeline-list {
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.6;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.timeline-list li {
+    margin-bottom: 8px;
+}
+
+.timeline-list li::marker {
+    color: #6366f1;
+}
+
+/* =========================================
+   PROJECTS SECTION
+   ========================================= */
 .projects {
     padding: 40px 20px;
     text-align: center;
@@ -166,11 +266,7 @@ body {
     margin: 0 auto;
 }
 
-.projects h2 {
-    font-size: 28px;
-    color: white;
-    margin-bottom: 30px;
-}
+.projects h2 { font-size: 28px; color: white; margin-bottom: 30px; }
 
 .project-card {
     background-color: #1e293b;
@@ -188,11 +284,7 @@ body {
     border-radius: 15px; font-size: 12px; font-weight: bold; margin-right: 5px;
 }
 
-.daniel-style {
-    background-color: #0f0f11; border-radius: 20px; padding: 15px;
-    border: 1px solid #27272a; margin-bottom: 30px;
-}
-
+.daniel-style { background-color: #0f0f11; border-radius: 20px; padding: 15px; border: 1px solid #27272a; margin-bottom: 30px; }
 .card-image-container { position: relative; width: 100%; height: 200px; }
 .project-img { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
 
@@ -220,38 +312,21 @@ body {
     padding: 15px; border-radius: 10px; font-size: 14px; line-height: 1.5; margin-bottom: 20px;
 }
 
-.problem-box strong {
-    color: #eab308; font-size: 12px; letter-spacing: 1px; display: block; margin-bottom: 5px;
-}
+.problem-box strong { color: #eab308; font-size: 12px; letter-spacing: 1px; display: block; margin-bottom: 5px; }
 
 /* --- FLOATING WHATSAPP BUTTON --- */
 .whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366; /* WhatsApp Green */
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 15px rgba(37, 211, 102, 0.4);
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    transition: 0.3s ease;
-    animation: pulse 2s infinite; /* Pulsing animation */
+    position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
+    background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center;
+    font-size: 30px; box-shadow: 2px 2px 15px rgba(37, 211, 102, 0.4); z-index: 100;
+    display: flex; justify-content: center; align-items: center; text-decoration: none;
+    transition: 0.3s ease; animation: pulse 2s infinite;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-}
+.whatsapp-float:hover { transform: scale(1.1); }
 
 @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
     70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-   }
+}
