@@ -1,0 +1,28 @@
+body {
+    background-color: #1a0b2e; /* Deep Purple */
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 100px;
+}
+
+h1 {
+    color: #38bdf8; 
+}
+
+button {
+    background-color: #38bdf8;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image a perfect circle */
+    border: 3px solid #38bdf8; /* Adds a blue border */
+    margin-bottom: 20px;
+}
