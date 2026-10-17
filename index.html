@@ -2,10 +2,8 @@
 <html>
 <head>
     <title>Divin ISHIMWE | Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=12">
+    <link rel="stylesheet" href="style.css?v=10">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Library for smooth scroll reveal animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -14,41 +12,12 @@
         <div class="top-bar">
             <div class="top-controls">
                 <div class="dropdown">
-                    <button class="lang-btn" id="current-lang-btn" onclick="toggleDropdown()">
-                        <span id="selected-flag">🇬🇧</span> <span id="selected-lang-code">EN</span> 
-                        <i class="fas fa-chevron-down" style="font-size: 11px; margin-left: 6px;"></i>
+                    <button class="lang-btn" onclick="toggleDropdown()">
+                        🇬🇧 EN <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 5px;"></i>
                     </button>
                     <div class="dropdown-content" id="myDropdown">
-                        <a href="#" onclick="selectLanguage('🇬🇧', 'EN', 'English'); return false;" class="active">
-                            <span class="flag">🇬🇧</span> English
-                        </a>
-                        <a href="#" onclick="selectLanguage('🇷🇼', 'RW', 'Kinyarwanda'); return false;">
-                            <span class="flag">🇷🇼</span> Kinyarwanda
-                        </a>
-                        <a href="#" onclick="selectLanguage('🇫🇷', 'FR', 'Français'); return false;">
-                            <span class="flag">🇫🇷</span> Français
-                        </a>
-                        <a href="#" onclick="selectLanguage('🇪🇸', 'ES', 'Español'); return false;">
-                            <span class="flag">🇪🇸</span> Español
-                        </a>
-                        <a href="#" onclick="selectLanguage('🇩🇪', 'DE', 'Deutsch'); return false;">
-                            <span class="flag">🇩🇪</span> Deutsch
-                        </a>
-                        <a href="#" onclick="selectLanguage('🇵🇹', 'PT', 'Português'); return false;">
-                            <span class="flag">🇵🇹</span> Português
-                        </a>
-                        <a href="#" onclick="selectLanguage('🇰🇪', 'SW', 'Kiswahili'); return false;">
-                            <span class="flag">🇰🇪</span> Kiswahili
-                        </a>
-                        <a href="#" onclick="selectLanguage('🇸🇦', 'AR', 'العربية'); return false;">
-                            <span class="flag">🇸🇦</span> العربية
-                        </a>
-                        <a href="#" onclick="selectLanguage('🇨🇳', 'ZH', '中文'); return false;">
-                            <span class="flag">🇨🇳</span> 中文
-                        </a>
-                        <a href="#" onclick="selectLanguage('🇮🇳', 'HI', 'हिन्दी'); return false;">
-                            <span class="flag">🇮🇳</span> हिन्दी
-                        </a>
+                        <a href="#">🇬🇧 English</a>
+                        <a href="#">🇷🇼 Kinyarwanda</a>
                     </div>
                 </div>
                 <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">
@@ -57,31 +26,31 @@
             </div>
         </div>
 
-        <div class="profile-wrapper" data-aos="zoom-in" data-aos-duration="1000">
+        <div class="profile-wrapper">
             <img src="https://github.com/Divish-news/portal/raw/main/1792234860191.jpg" alt="Divin's Profile" class="hero-img">
         </div>
 
-        <div class="location-badge" data-aos="fade-down" data-aos-delay="200">
+        <div class="location-badge">
             <span class="dot"></span> Kigali, Rwanda · Open to opportunities
         </div>
 
-        <h1 data-aos="fade-up" data-aos-delay="400">Muraho! I am Divin ISHIMWE</h1>
+        <h1>Muraho! I am Divin ISHIMWE</h1>
         
-        <p data-aos="fade-up" data-aos-delay="600">Aspiring AI Specialist and Software Engineer. I am currently studying Computer Science at the University of Rwanda (UR CST). I am passionate about leveraging Artificial Intelligence, Cybersecurity, and Software Engineering to build impactful technology solutions for Rwanda and beyond.</p>
+        <p>Aspiring AI Specialist and Software Engineer. I am currently studying Computer Science at the University of Rwanda (UR CST). I am passionate about leveraging Artificial Intelligence, Cybersecurity, and Software Engineering to build impactful technology solutions for Rwanda and beyond.</p>
         
-        <div class="social-icons" data-aos="fade-up" data-aos-delay="800">
+        <div class="social-icons">
             <a href="https://www.linkedin.com/in/divin-ishimwe" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://github.com/Divish-news" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="mailto:divish250@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
 
-        <div class="action-buttons" data-aos="fade-up" data-aos-delay="1000">
+        <div class="action-buttons">
             <a href="contact.html" class="btn-white">Get in touch</a>
             <a href="#experience" class="btn-outline">View Experience</a>
         </div>
 
-        <a href="#experience" class="scroll-down" data-aos="fade" data-aos-delay="1200">
+        <a href="#experience" class="scroll-down">
             <p>SCROLL DOWN</p>
             <i class="fas fa-arrow-down"></i>
         </a>
@@ -89,13 +58,13 @@
 
     <!-- EXPERIENCE SECTION -->
     <section class="experience-section" id="experience">
-        <p class="section-subtitle" data-aos="fade-up">// experience</p>
-        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Professional Experience</h2>
-        <div class="title-underline" data-aos="zoom-in" data-aos-delay="200"></div>
-        <p class="section-desc" data-aos="fade-up" data-aos-delay="300">From high school coding clubs to robotics labs — building the foundation one role at a time.</p>
+        <p class="section-subtitle">// experience</p>
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="title-underline"></div>
+        <p class="section-desc">From high school coding clubs to robotics labs — building the foundation one role at a time.</p>
 
         <div class="timeline">
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-header"><i class="fas fa-briefcase"></i> ES SUMBA</div>
@@ -108,7 +77,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-header"><i class="fas fa-briefcase"></i> ISC2</div>
@@ -126,10 +95,10 @@
 
     <!-- PROJECTS SECTION -->
     <section class="projects" id="projects">
-        <h2 data-aos="fade-up">My Projects</h2>
+        <h2>My Projects</h2>
         
         <!-- 1. MINI MARKET -->
-        <div class="project-card daniel-style" data-aos="fade-up" data-aos-delay="100">
+        <div class="project-card daniel-style">
             <div class="card-image-container">
                 <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" alt="Shopping Cart" class="project-img">
                 <span class="badge">PYTHON CLI PROJECT</span>
@@ -148,7 +117,7 @@
         </div>
 
         <!-- 2. ISUKU RWANDA -->
-        <div class="project-card daniel-style" style="border-left: 5px solid #22c55e;" data-aos="fade-up" data-aos-delay="200">
+        <div class="project-card daniel-style" style="border-left: 5px solid #22c55e;">
             <div class="card-image-container">
                 <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800&auto=format&fit=crop" alt="Clean Rwanda" class="project-img">
                 <span class="badge" style="color: #22c55e; border-color: #22c55e;">🌍 SMART CITY PROJECT</span>
@@ -167,7 +136,7 @@
         </div>
 
         <!-- 3. RWANDA YOUTH OPPORTUNITIES -->
-        <div class="project-card daniel-style" style="border-left: 5px solid #eab308;" data-aos="fade-up" data-aos-delay="300">
+        <div class="project-card daniel-style" style="border-left: 5px solid #eab308;">
             <div class="card-image-container">
                 <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" alt="Students Studying" class="project-img">
                 <span class="badge" style="color: #eab308; border-color: #eab308;">🎓 EDUCATION & JOBS</span>
@@ -186,7 +155,7 @@
         </div>
 
         <!-- 4. WATER & ELECTRICITY REPORTER -->
-        <div class="project-card daniel-style" style="border-left: 5px solid #3b82f6;" data-aos="fade-up" data-aos-delay="400">
+        <div class="project-card daniel-style" style="border-left: 5px solid #3b82f6;">
             <div class="card-image-container">
                 <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=800&auto=format&fit=crop" alt="Water and Electricity" class="project-img">
                 <span class="badge" style="color: #3b82f6; border-color: #3b82f6;">💧⚡ UTILITY INFRASTRUCTURE</span>
@@ -205,7 +174,7 @@
         </div>
 
         <!-- 5. PERSONAL PORTFOLIO -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="project-card">
             <h3>Personal Portfolio</h3>
             <p>This website! Built with HTML, CSS, and JavaScript and hosted live on GitHub Pages.</p>
             <div class="card-footer">
@@ -218,13 +187,13 @@
 
     <!-- SKILLS SECTION -->
     <section class="skills-section">
-        <p class="section-subtitle" data-aos="fade-up">// skills</p>
-        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Skills & Expertise</h2>
-        <div class="title-underline" data-aos="zoom-in" data-aos-delay="200"></div>
-        <p class="section-desc" data-aos="fade-up" data-aos-delay="300">Full-stack foundations, prompt engineering as a superpower, and a cybersecurity background to keep it secure.</p>
+        <p class="section-subtitle">// skills</p>
+        <h2 class="section-title">Skills & Expertise</h2>
+        <div class="title-underline"></div>
+        <p class="section-desc">Full-stack foundations, prompt engineering as a superpower, and a cybersecurity background to keep it secure.</p>
 
         <div class="skills-grid">
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-card">
                 <div class="skill-header">
                     <div class="skill-title"><i class="fas fa-robot"></i> AI & PROMPT</div>
                     <span class="skill-badge">CORE EDGE</span>
@@ -236,7 +205,7 @@
                     <span class="tag">Prompt Design</span>
                 </div>
             </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="skill-card">
                 <div class="skill-header">
                     <div class="skill-title"><i class="fas fa-code"></i> LANGUAGES</div>
                 </div>
@@ -248,7 +217,7 @@
                     <span class="tag">C</span>
                 </div>
             </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="skill-card">
                 <div class="skill-header">
                     <div class="skill-title"><i class="fas fa-database"></i> DATABASES</div>
                 </div>
@@ -258,7 +227,7 @@
                     <span class="tag">Python Flask</span>
                 </div>
             </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="skill-card">
                 <div class="skill-header">
                     <div class="skill-title"><i class="fas fa-shield-alt"></i> CYBERSECURITY</div>
                 </div>
@@ -267,7 +236,7 @@
                     <span class="tag">Threat Analysis</span>
                 </div>
             </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="skill-card">
                 <div class="skill-header">
                     <div class="skill-title"><i class="fas fa-globe"></i> LANGUAGES SPOKEN</div>
                 </div>
@@ -282,13 +251,13 @@
 
     <!-- CERTIFICATIONS SECTION -->
     <section class="certs-section">
-        <div class="section-header" data-aos="fade-up">
+        <div class="section-header">
             <div class="section-icon"><i class="fas fa-shield-alt"></i></div>
             <h2 class="section-title" style="text-align: left; margin: 0;">Certifications</h2>
         </div>
 
         <div class="certs-grid">
-            <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="cert-card">
                 <div class="cert-icon blue"><i class="fas fa-shield-halved"></i></div>
                 <div class="cert-info">
                     <h3>Certified in Cybersecurity (CC)</h3>
@@ -297,7 +266,7 @@
                 <div class="cert-year">2025</div>
                 <a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
             </div>
-            <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="cert-card">
                 <div class="cert-icon yellow"><i class="fas fa-network-wired"></i></div>
                 <div class="cert-info">
                     <h3>HCIA-Datacom</h3>
@@ -306,7 +275,7 @@
                 <div class="cert-year">2026</div>
                 <a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
             </div>
-            <div class="cert-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="cert-card">
                 <div class="cert-icon green"><i class="fas fa-robot"></i></div>
                 <div class="cert-info">
                     <h3>Google AI Essentials</h3>
@@ -315,7 +284,7 @@
                 <div class="cert-year">2026</div>
                 <a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
             </div>
-            <div class="cert-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="cert-card">
                 <div class="cert-icon purple"><i class="fas fa-briefcase"></i></div>
                 <div class="cert-info">
                     <h3>Cybersecurity Job Simulation</h3>
@@ -324,7 +293,7 @@
                 <div class="cert-year">2026</div>
                 <a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
             </div>
-            <div class="cert-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="cert-card">
                 <div class="cert-icon red"><i class="fas fa-code"></i></div>
                 <div class="cert-info">
                     <h3>Responsive Web Design</h3>
@@ -344,4 +313,8 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- AOS JS Library Initializati
+    <!-- JAVASCRIPT LINK -->
+    <script src="script.js"></script>
+
+</body>
+                        </html>
