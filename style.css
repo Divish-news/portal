@@ -1,28 +1,98 @@
 body {
-    background-color: #1a0b2e; /* Deep Purple */
+    background-color: #0f172a; /* Dark blue background */
     color: white;
     font-family: Arial, sans-serif;
-    text-align: center;
-    padding-top: 100px;
+    margin: 0;
+    padding: 0;
 }
 
-h1 {
-    color: #38bdf8; 
+/* HERO SECTION (Top of the page) */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #1a0b2e; /* Deep Purple */
+    min-height: 60vh; /* Makes it fill the screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero img {
+    width: 180px; /* Bigger photo */
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid #38bdf8;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 36px; /* Bigger text */
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #cbd5e1;
+    max-width: 600px;
+    line-height: 1.6;
 }
 
 button {
     background-color: #38bdf8;
     color: black;
-    padding: 10px 20px;
+    padding: 12px 30px;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
+    margin-top: 20px;
 }
-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%; /* Makes the image a perfect circle */
-    border: 3px solid #38bdf8; /* Adds a blue border */
+
+button:hover {
+    background-color: white;
+}
+
+/* PROJECTS SECTION */
+.projects {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.projects h2 {
+    font-size: 28px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.project-card {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
     margin-bottom: 20px;
+    text-align: left;
+    border-left: 5px solid #38bdf8;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #38bdf8;
+}
+
+.project-card p {
+    color: #94a3b8;
+}
+
+.tech {
+    background-color: #38bdf8;
+    color: black;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 5px;
 }
