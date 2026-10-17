@@ -3,23 +3,32 @@
 <head>
     <title>Divin ISHIMWE | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <!-- HERO SECTION -->
     <section class="hero">
+        
+        <!-- Top Bar with Language & Theme -->
         <div class="top-bar">
-            <div class="lang-btn">🇬🇧 EN</div>
-            <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">
-        <i class="fas fa-sun"></i>
-            </button>
+            <div class="top-controls">
+                <div class="lang-btn">
+                    🇬🇧 EN <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i>
+                </div>
+                <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
         </div>
 
+        <!-- Profile Image -->
         <div class="profile-wrapper">
             <img src="https://github.com/Divish-news/portfolio/raw/main/1792234860191.jpg" alt="Divin's Profile" class="hero-img">
         </div>
 
+        <!-- Location Badge -->
         <div class="location-badge">
             <span class="dot"></span> Kigali, Rwanda · Open to opportunities
         </div>
@@ -28,6 +37,7 @@
         
         <p>Aspiring AI Specialist and Software Engineer. I am currently studying Computer Science at the University of Rwanda (UR CST). I am passionate about leveraging Artificial Intelligence, Cybersecurity, and Software Engineering to build impactful technology solutions for Rwanda and beyond.</p>
         
+        <!-- Social Icons -->
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/divin-ishimwe" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://github.com/Divish-news" target="_blank"><i class="fab fa-github"></i></a>
@@ -35,21 +45,27 @@
             <a href="mailto:divish250@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
 
+        <!-- Action Buttons -->
         <div class="action-buttons">
             <a href="contact.html" class="btn-white">Get in touch</a>
-            <a href="#projects" class="btn-outline">View Projects</a>
+            <a href="#experience" class="btn-outline">View Experience</a>
         </div>
+
+        <!-- Scroll Down Icon (Like Daniel) -->
+        <a href="#experience" class="scroll-down">
+            <p>SCROLL DOWN</p>
+            <i class="fas fa-arrow-down"></i>
+        </a>
     </section>
 
-    <!-- EXPERIENCE SECTION (Like Daniel) -->
-    <section class="experience-section">
+    <!-- EXPERIENCE SECTION -->
+    <section class="experience-section" id="experience">
         <p class="section-subtitle">// experience</p>
         <h2 class="section-title">Professional Experience</h2>
         <div class="title-underline"></div>
         <p class="section-desc">From high school coding clubs to robotics labs — building the foundation one role at a time.</p>
 
         <div class="timeline">
-            
             <!-- Experience 1: E.S Sumba -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
@@ -84,7 +100,6 @@
                     </ul>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -148,27 +163,21 @@
                 </div>
             </div>
         </div>
-
-        <!-- 4. PERSONAL PORTFOLIO -->
-        <div class="project-card">
-            <h3>Personal Portfolio</h3>
-            <p>This website! Built with HTML, CSS, and JavaScript and hosted live on GitHub Pages.</p>
-            <span class="tech">HTML</span> <span class="tech">CSS</span> <span class="tech">JS</span>
-        </div>
-        
     </section>
 
-    <!-- FLOATING WHATSAPP BUTTON -->
+    <!-- FLOATING BUTTONS (WhatsApp & Back to Top) -->
     <a href="https://wa.me/250783370320" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-        <!-- JAVASCRIPT FOR DARK/LIGHT THEME -->
+    
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JAVASCRIPT FOR DARK/LIGHT THEME -->
     <script>
         function toggleTheme() {
-            // Toggle the 'light-mode' class on the body
             document.body.classList.toggle('light-mode');
-            
-            // Change the icon from Sun to Moon
             const icon = document.querySelector('#theme-toggle i');
             if (document.body.classList.contains('light-mode')) {
                 icon.classList.remove('fa-sun');
@@ -179,6 +188,6 @@
             }
         }
     </script>
-    
+
 </body>
     </html>
