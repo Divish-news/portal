@@ -11,8 +11,7 @@ body {
 
 .hero {
     text-align: center;
-    padding: 20px 20px 80px 20px;
-    min-height: 80vh;
+    padding: 20px 20px 60px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -25,7 +24,7 @@ body {
     display: flex;
     justify-content: flex-end;
     max-width: 800px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .lang-btn {
@@ -34,31 +33,29 @@ body {
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 14px;
-    cursor: pointer;
+    color: white;
 }
 
 /* The Big Circular Image */
 .profile-wrapper {
-    position: relative;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    padding: 10px;
-    background: transparent;
-    border: 2px dashed rgba(139, 92, 246, 0.4); /* Purple dashed ring */
+    width: 180px;          /* Fixed width */
+    height: 180px;         /* Fixed height */
+    border-radius: 50%;    /* Makes it a circle */
+    padding: 8px;
+    border: 2px dashed rgba(139, 92, 246, 0.6); /* Purple dashed ring */
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 25px;
-    box-shadow: 0 0 40px rgba(139, 92, 246, 0.15); /* Glow effect */
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.2); 
 }
 
 .hero-img {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #fff; /* White border inside */
+    object-fit: cover;     /* Prevents stretching */
+    border: 3px solid #fff;
 }
 
 /* Location Badge */
@@ -78,14 +75,13 @@ body {
 .dot {
     width: 8px;
     height: 8px;
-    background-color: #22c55e; /* Green dot */
+    background-color: #22c55e;
     border-radius: 50%;
-    display: inline-block;
 }
 
 .hero h1 {
-    font-size: 42px;
-    color: #a78bfa; /* Light purple text */
+    font-size: 38px;
+    color: #a78bfa;
     margin-bottom: 15px;
     font-weight: bold;
 }
@@ -99,14 +95,13 @@ body {
 }
 
 .contact-link {
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6); /* Gradient button */
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
     color: white;
     padding: 12px 30px;
     border-radius: 25px;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
-    display: inline-block;
     transition: 0.3s;
 }
 
@@ -115,10 +110,10 @@ body {
 }
 
 /* =========================================
-   PROJECTS SECTION & CARDS (Keep exactly as before)
+   PROJECTS & CARDS (Keep as before)
    ========================================= */
 .projects {
-    padding: 60px 20px;
+    padding: 40px 20px;
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
@@ -139,122 +134,45 @@ body {
     border-left: 5px solid #38bdf8;
 }
 
-.project-card h3 {
-    margin-top: 0;
-    color: #38bdf8;
-}
-
-.project-card p {
-    color: #94a3b8;
-}
-
+.project-card h3 { margin-top: 0; color: #38bdf8; }
+.project-card p { color: #94a3b8; }
 .tech {
-    background-color: #38bdf8;
-    color: black;
-    padding: 4px 10px;
-    border-radius: 15px;
-    font-size: 12px;
-    font-weight: bold;
-    margin-right: 5px;
+    background-color: #38bdf8; color: black; padding: 4px 10px;
+    border-radius: 15px; font-size: 12px; font-weight: bold; margin-right: 5px;
 }
 
 .daniel-style {
-    background-color: #0f0f11;
-    border-radius: 20px;
-    padding: 15px;
-    border: 1px solid #27272a;
-    margin-bottom: 30px;
+    background-color: #0f0f11; border-radius: 20px; padding: 15px;
+    border: 1px solid #27272a; margin-bottom: 30px;
 }
 
-.card-image-container {
-    position: relative;
-    width: 100%;
-    height: 200px;
-}
-
-.project-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
-}
+.card-image-container { position: relative; width: 100%; height: 200px; }
+.project-img { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
 
 .badge {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background-color: #000000;
-    color: #4ade80;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    border: 1px solid #27272a;
+    position: absolute; top: 15px; left: 15px; background-color: #000000;
+    color: #4ade80; padding: 8px 15px; border-radius: 20px;
+    font-size: 11px; font-weight: bold; letter-spacing: 1px; border: 1px solid #27272a;
 }
 
-.card-content {
-    padding: 15px 5px 5px 5px;
-}
+.card-content { padding: 15px 5px 5px 5px; }
+.card-content h3 { color: white; font-size: 22px; margin: 0 0 10px 0; }
+.description { color: #d4d4d8; font-size: 15px; line-height: 1.5; margin-bottom: 20px; }
 
-.card-content h3 {
-    color: white;
-    font-size: 22px;
-    margin: 0 0 10px 0;
-}
-
-.description {
-    color: #d4d4d8;
-    font-size: 15px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.price {
-    color: #4ade80;
-    font-weight: bold;
-    font-size: 18px;
-}
+.card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+.price { color: #4ade80; font-weight: bold; font-size: 18px; }
 
 .details-btn {
-    background-color: transparent;
-    color: #4ade80;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 1px solid #4ade80;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.details-btn:hover {
-    background-color: #4ade80;
-    color: black;
+    background-color: transparent; color: #4ade80; text-decoration: none;
+    padding: 10px 20px; border: 1px solid #4ade80; border-radius: 10px;
+    font-weight: bold; font-size: 14px; transition: 0.3s;
 }
 
 .problem-box {
-    background-color: #1a1508;
-    border: 1px solid #4d3d10;
-    color: #d4d4d8;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    background-color: #1a1508; border: 1px solid #4d3d10; color: #d4d4d8;
+    padding: 15px; border-radius: 10px; font-size: 14px; line-height: 1.5; margin-bottom: 20px;
 }
 
 .problem-box strong {
-    color: #eab308;
-    font-size: 12px;
-    letter-spacing: 1px;
-    display: block;
-    margin-bottom: 5px;
+    color: #eab308; font-size: 12px; letter-spacing: 1px; display: block; margin-bottom: 5px;
    }
