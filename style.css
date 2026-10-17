@@ -1,17 +1,19 @@
+/* =========================================
+   GLOBAL & HERO SECTION
+   ========================================= */
 body {
-    background-color: #0f172a; 
+    background-color: #0f172a; /* Dark blue background */
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-/* HERO SECTION (Top of the page) */
 .hero {
     text-align: center;
     padding: 80px 20px;
-    background-color: #1a0b2e; 
-    min-height: 60vh; 
+    background-color: #1a0b2e; /* Deep Purple */
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +21,7 @@ body {
 }
 
 .hero img {
-    width: 180px; 
+    width: 180px;
     height: 180px;
     border-radius: 50%;
     border: 4px solid #38bdf8;
@@ -27,7 +29,7 @@ body {
 }
 
 .hero h1 {
-    font-size: 36px; 
+    font-size: 36px;
     color: #38bdf8;
     margin-bottom: 10px;
 }
@@ -39,26 +41,26 @@ body {
     line-height: 1.6;
 }
 
-/* ⚠️ THIS IS THE BUTTON SECTION YOU NEED TO UPDATE ⚠️ */
-button {
+.contact-link {
     background-color: #38bdf8;
     color: black;
     padding: 12px 30px;
-    border: none;
     border-radius: 8px;
     font-size: 18px;
     font-weight: bold;
-    cursor: pointer;
+    text-decoration: none;
     margin-top: 20px;
-    position: relative; /* Added for clicking */
-    z-index: 10;        /* Added to force click on mobile */
+    display: inline-block;
+    transition: 0.3s;
 }
 
-button:hover {
+.contact-link:hover {
     background-color: white;
 }
 
-/* PROJECTS SECTION */
+/* =========================================
+   PROJECTS SECTION (Standard)
+   ========================================= */
 .projects {
     padding: 60px 20px;
     text-align: center;
@@ -99,10 +101,94 @@ button:hover {
     font-weight: bold;
     margin-right: 5px;
 }
-.project-img {
-    width: 100%;       /* Makes the image fill the width of the card */
-    height: 200px;     /* Sets a fixed height */
-    object-fit: cover; /* Prevents the image from looking stretched */
-    border-radius: 8px;/* Rounds the corners */
-    margin-bottom: 15px; /* Adds space between the image and the title */
+
+/* =========================================
+   DANIEL-STYLE CARD (Advanced UI)
+   ========================================= */
+.daniel-style {
+    background-color: #0f0f11; /* Very dark background */
+    border-radius: 20px;
+    padding: 15px;
+    border: 1px solid #27272a;
+    margin-bottom: 30px;
 }
+
+.card-image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #000000;
+    color: #4ade80; /* Bright green text */
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 1px solid #27272a;
+}
+
+.card-content {
+    padding: 15px 5px 5px 5px;
+}
+
+.card-content h3 {
+    color: white;
+    font-size: 22px;
+    margin: 0 0 10px 0;
+}
+
+.location {
+    color: #a1a1aa;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #d4d4d8;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.price {
+    color: #4ade80; /* Green price text */
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.details-btn {
+    background-color: transparent;
+    color: #4ade80;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #4ade80;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.details-btn:hover {
+    background-color: #4ade80;
+    color: black;
+    }
