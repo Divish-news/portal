@@ -20,180 +20,33 @@ body {
     position: relative;
 }
 
-/* Top Bar (Language & Theme) */
-.top-bar {
-    width: 100%;
-    max-width: 800px;
-    display: flex;
-    justify-content: flex-end; /* Aligns to the right like Daniel's */
-    margin-bottom: 20px;
-}
+.top-bar { width: 100%; max-width: 800px; display: flex; justify-content: flex-end; margin-bottom: 20px; }
+.top-controls { display: flex; gap: 10px; align-items: center; }
+.lang-btn { background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 8px 15px; border-radius: 20px; font-size: 14px; color: white; display: flex; align-items: center; }
+.theme-btn { background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: white; width: 40px; height: 40px; border-radius: 50%; font-size: 16px; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: 0.3s ease; }
 
-.top-controls {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
+.profile-wrapper { width: 180px; height: 180px; border-radius: 50%; padding: 8px; border: 2px dashed rgba(139, 92, 246, 0.6); display: flex; justify-content: center; align-items: center; margin-bottom: 20px; box-shadow: 0 0 30px rgba(139, 92, 246, 0.2); }
+.hero-img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 3px solid #fff; }
+.location-badge { background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 8px 18px; border-radius: 20px; font-size: 14px; color: #cbd5e1; display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+.dot { width: 8px; height: 8px; background-color: #22c55e; border-radius: 50%; }
+.hero h1 { font-size: 36px; color: #a78bfa; margin-bottom: 15px; font-weight: bold; }
+.hero p { font-size: 16px; color: #94a3b8; max-width: 600px; line-height: 1.6; margin-bottom: 30px; }
 
-.lang-btn {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 14px;
-    color: white;
-    display: flex;
-    align-items: center;
-}
+.social-icons { display: flex; gap: 15px; margin-bottom: 30px; }
+.social-icons a { color: #94a3b8; background-color: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; border-radius: 50%; font-size: 18px; text-decoration: none; transition: 0.3s ease; }
+.social-icons a:hover { color: #a78bfa; border-color: #a78bfa; transform: translateY(-5px); }
 
-.theme-btn {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s ease;
-}
-
-/* Profile Image */
-.profile-wrapper {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    padding: 8px;
-    border: 2px dashed rgba(139, 92, 246, 0.6); 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.2); 
-}
-
-.hero-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover; 
-    border: 3px solid #fff;
-}
-
-.location-badge {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 8px 18px;
-    border-radius: 20px;
-    font-size: 14px;
-    color: #cbd5e1;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-
-.dot {
-    width: 8px;
-    height: 8px;
-    background-color: #22c55e;
-    border-radius: 50%;
-}
-
-.hero h1 {
-    font-size: 36px;
-    color: #a78bfa;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.hero p {
-    font-size: 16px;
-    color: #94a3b8;
-    max-width: 600px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
-/* Social Icons */
-.social-icons {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.social-icons a {
-    color: #94a3b8;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    width: 45px;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    font-size: 18px;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #a78bfa;
-    border-color: #a78bfa;
-    transform: translateY(-5px);
-}
-
-/* Action Buttons */
-.action-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.btn-white, .btn-outline {
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
-
+.action-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+.btn-white, .btn-outline { padding: 12px 25px; border-radius: 25px; font-size: 16px; font-weight: bold; text-decoration: none; transition: 0.3s ease; }
 .btn-white { background-color: white; color: black; }
-.btn-white:hover { background-color: #e2e8f0; transform: scale(1.05); }
 .btn-outline { background-color: transparent; color: white; border: 1px solid rgba(255, 255, 255, 0.2); }
-.btn-outline:hover { border-color: white; background-color: rgba(255, 255, 255, 0.1); transform: scale(1.05); }
 
-/* Scroll Down Icon */
-.scroll-down {
-    margin-top: 40px;
-    color: #64748b;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    font-size: 12px;
-    letter-spacing: 2px;
-    transition: 0.3s;
-}
-
-.scroll-down:hover { color: white; }
+.scroll-down { margin-top: 40px; color: #64748b; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 12px; letter-spacing: 2px; transition: 0.3s; }
 
 /* =========================================
-   EXPERIENCE SECTION
+   EXPERIENCE & PROJECTS
    ========================================= */
-.experience-section {
-    padding: 60px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
+.experience-section, .projects, .skills-section { padding: 60px 20px; max-width: 800px; margin: 0 auto; text-align: center; }
 .section-subtitle { color: #6366f1; font-family: monospace; font-size: 16px; margin-bottom: 10px; }
 .section-title { font-size: 32px; font-weight: bold; margin: 0 0 15px 0; }
 .title-underline { width: 60px; height: 4px; background-color: #6366f1; margin: 0 auto 20px auto; border-radius: 2px; }
@@ -208,49 +61,110 @@ body {
 .timeline-content h3 { margin: 0 0 10px 0; font-size: 20px; }
 .date-loc { color: #94a3b8; font-size: 13px; margin-bottom: 15px; }
 .timeline-list { color: #cbd5e1; font-size: 14px; line-height: 1.6; padding-left: 20px; margin: 0; }
-.timeline-list li { margin-bottom: 8px; }
-.timeline-list li::marker { color: #6366f1; }
 
-/* =========================================
-   PROJECTS SECTION
-   ========================================= */
-.projects { padding: 40px 20px; text-align: center; max-width: 800px; margin: 0 auto; }
 .projects h2 { font-size: 28px; color: white; margin-bottom: 30px; }
 .project-card { background-color: #1e293b; padding: 20px; border-radius: 10px; margin-bottom: 20px; text-align: left; border-left: 5px solid #38bdf8; }
 .project-card h3 { margin-top: 0; color: #38bdf8; }
-.project-card p { color: #94a3b8; }
 .daniel-style { background-color: #0f0f11; border-radius: 20px; padding: 15px; border: 1px solid #27272a; margin-bottom: 30px; }
 .card-image-container { position: relative; width: 100%; height: 200px; }
 .project-img { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
-.badge { position: absolute; top: 15px; left: 15px; background-color: #000000; color: #4ade80; padding: 8px 15px; border-radius: 20px; font-size: 11px; font-weight: bold; letter-spacing: 1px; border: 1px solid #27272a; }
+.badge { position: absolute; top: 15px; left: 15px; background-color: #000000; color: #4ade80; padding: 8px 15px; border-radius: 20px; font-size: 11px; font-weight: bold; border: 1px solid #27272a; }
 .card-content { padding: 15px 5px 5px 5px; }
 .card-content h3 { color: white; font-size: 22px; margin: 0 0 10px 0; }
 .description { color: #d4d4d8; font-size: 15px; line-height: 1.5; margin-bottom: 20px; }
 .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
 .price { color: #4ade80; font-weight: bold; font-size: 18px; }
-.details-btn { background-color: transparent; color: #4ade80; text-decoration: none; padding: 10px 20px; border: 1px solid #4ade80; border-radius: 10px; font-weight: bold; font-size: 14px; transition: 0.3s; }
-.problem-box { background-color: #1a1508; border: 1px solid #4d3d10; color: #d4d4d8; padding: 15px; border-radius: 10px; font-size: 14px; line-height: 1.5; margin-bottom: 20px; }
+.details-btn { background-color: transparent; color: #4ade80; text-decoration: none; padding: 10px 20px; border: 1px solid #4ade80; border-radius: 10px; font-weight: bold; font-size: 14px; }
+.problem-box { background-color: #1a1508; border: 1px solid #4d3d10; color: #d4d4d8; padding: 15px; border-radius: 10px; font-size: 14px; margin-bottom: 20px; }
 .problem-box strong { color: #eab308; font-size: 12px; letter-spacing: 1px; display: block; margin-bottom: 5px; }
 
 /* =========================================
-   FLOATING BUTTONS
+   SKILLS SECTION (Daniel Style)
    ========================================= */
-.whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 15px rgba(37, 211, 102, 0.4); z-index: 100; display: flex; justify-content: center; align-items: center; text-decoration: none; transition: 0.3s ease; animation: pulse 2s infinite; }
-.whatsapp-float:hover { transform: scale(1.1); }
-@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
 
-.back-to-top { position: fixed; width: 50px; height: 50px; bottom: 100px; right: 35px; background-color: #1e293b; color: #a78bfa; border-radius: 50%; text-align: center; font-size: 20px; z-index: 99; display: flex; justify-content: center; align-items: center; text-decoration: none; transition: 0.3s; border: 1px solid #27272a; }
-.back-to-top:hover { background-color: #a78bfa; color: white; }
+.skill-card {
+    background-color: #0f0f11;
+    border: 1px solid #27272a;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.skill-title {
+    color: #818cf8; /* Purple */
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-badge {
+    background-color: #1e1b4b;
+    color: #a78bfa;
+    padding: 5px 12px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background-color: #18181b;
+    border: 1px solid #27272a;
+    color: #cbd5e1;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.tag.highlight {
+    color: #818cf8;
+    border-color: #4c1d95;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+}
+
+.tag-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #818cf8;
+    border-radius: 50%;
+}
 
 /* =========================================
-   LIGHT MODE STYLES
+   FLOATING BUTTONS & LIGHT MODE
    ========================================= */
+.whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 15px rgba(37, 211, 102, 0.4); z-index: 100; display: flex; justify-content: center; align-items: center; text-decoration: none; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+.back-to-top { position: fixed; width: 50px; height: 50px; bottom: 100px; right: 35px; background-color: #1e293b; color: #a78bfa; border-radius: 50%; text-align: center; font-size: 20px; z-index: 99; display: flex; justify-content: center; align-items: center; text-decoration: none; border: 1px solid #27272a; }
+
 body.light-mode { background-color: #f8fafc; color: #0f172a; }
 body.light-mode .hero { background: radial-gradient(circle at top, #e2e8f0 0%, #f8fafc 50%); }
 body.light-mode .location-badge, body.light-mode .lang-btn, body.light-mode .theme-btn, body.light-mode .social-icons a { background-color: #e2e8f0; border-color: #cbd5e1; color: #0f172a; }
-body.light-mode .theme-btn i { color: #0f172a; }
-body.light-mode .timeline-content, body.light-mode .project-card { background-color: white; border-color: #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+body.light-mode .timeline-content, body.light-mode .project-card, body.light-mode .skill-card { background-color: white; border-color: #cbd5e1; }
 body.light-mode .timeline-content h3, body.light-mode .card-content h3, body.light-mode .projects h2, body.light-mode .section-title, body.light-mode .description, body.light-mode .timeline-list, body.light-mode .section-desc { color: #0f172a; }
 body.light-mode .problem-box { background-color: #fffbeb; border-color: #fde68a; color: #78350f; }
-body.light-mode .btn-outline { color: #0f172a; border-color: #0f172a; }
-body.light-mode .scroll-down { color: #64748b; }
+body.light-mode .tag { background-color: #f1f5f9; border-color: #cbd5e1; color: #0f172a; }
