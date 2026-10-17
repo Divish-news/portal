@@ -2,16 +2,30 @@
 <html>
 <head>
     <title>Divin ISHIMWE | Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=5">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <!-- HERO SECTION -->
     <section class="hero">
+        
+        <!-- Top Bar -->
         <div class="top-bar">
             <div class="top-controls">
-                <div class="lang-btn">🇬🇧 EN <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></div>
+                
+                <!-- Language Dropdown -->
+                <div class="dropdown">
+                    <button class="lang-btn" onclick="toggleDropdown()">
+                        🇬🇧 EN <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 5px;"></i>
+                    </button>
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="#">🇬🇧 English</a>
+                        <a href="#">🇷🇼 Kinyarwanda</a>
+                    </div>
+                </div>
+
+                <!-- Theme Button -->
                 <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">
                     <i class="fas fa-sun"></i>
                 </button>
@@ -56,7 +70,6 @@
         <p class="section-desc">From high school coding clubs to robotics labs — building the foundation one role at a time.</p>
 
         <div class="timeline">
-            <!-- Experience 1 -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
@@ -72,7 +85,6 @@
                 </div>
             </div>
 
-            <!-- Experience 2 -->
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
@@ -93,7 +105,6 @@
     <section class="projects" id="projects">
         <h2>My Projects</h2>
         
-        <!-- 1. MINI MARKET -->
         <div class="project-card daniel-style">
             <div class="card-image-container">
                 <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" alt="Shopping Cart" class="project-img">
@@ -112,7 +123,6 @@
             </div>
         </div>
 
-        <!-- 2. ISUKU RWANDA -->
         <div class="project-card daniel-style" style="border-left: 5px solid #22c55e;">
             <div class="card-image-container">
                 <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800&auto=format&fit=crop" alt="Clean Rwanda" class="project-img">
@@ -131,7 +141,6 @@
             </div>
         </div>
 
-        <!-- 3. RWANDA YOUTH OPPORTUNITIES -->
         <div class="project-card daniel-style" style="border-left: 5px solid #eab308;">
             <div class="card-image-container">
                 <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" alt="Students Studying" class="project-img">
@@ -150,7 +159,6 @@
             </div>
         </div>
 
-        <!-- 4. PERSONAL PORTFOLIO -->
         <div class="project-card">
             <h3>Personal Portfolio</h3>
             <p>This website! Built with HTML, CSS, and JavaScript and hosted live on GitHub Pages.</p>
@@ -161,7 +169,7 @@
             </div>
         </div>
         
-    </section> <!-- ⚠️ THIS CLOSES THE PROJECTS SECTION! -->
+    </section>
 
     <!-- SKILLS SECTION -->
     <section class="skills-section">
@@ -171,7 +179,6 @@
         <p class="section-desc">Full-stack foundations, prompt engineering as a superpower, and a cybersecurity background to keep it secure.</p>
 
         <div class="skills-grid">
-            
             <div class="skill-card">
                 <div class="skill-header">
                     <div class="skill-title"><i class="fas fa-robot"></i> AI & PROMPT</div>
@@ -229,7 +236,6 @@
                     <span class="tag">French</span>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -244,6 +250,7 @@
 
     <!-- JAVASCRIPT -->
     <script>
+        // Theme Toggle
         function toggleTheme() {
             document.body.classList.toggle('light-mode');
             const icon = document.querySelector('#theme-toggle i');
@@ -255,7 +262,25 @@
                 icon.classList.add('fa-sun');
             }
         }
+
+        // Language Dropdown Toggle
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.lang-btn') && !event.target.matches('.lang-btn *')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
     </script>
 
 </body>
-                        </html>
+</html>
