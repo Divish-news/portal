@@ -1,357 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Divin ISHIMWE | Portfolio</title>
-    <link rel="stylesheet" href="style.css?v=11">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Library for smooth scroll reveal animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#05050f">
+  <meta name="description" content="Divin ISHIMWE — Computer Science student and aspiring software engineer interested in AI, cybersecurity, and useful technology for Rwanda.">
+  <meta property="og:title" content="Divin ISHIMWE | Portfolio">
+  <meta property="og:description" content="Projects, skills, experience, and certifications of Divin ISHIMWE.">
+  <title>Divin ISHIMWE | Portfolio</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="top-bar">
-            <div class="top-controls">
-                <div class="dropdown">
-                    <button class="lang-btn" onclick="toggleDropdown()">
-                        🇬🇧 EN <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 5px;"></i>
-                    </button>
-                    <div class="dropdown-content" id="myDropdown">
-                        <a href="#">🇬🇧 English</a>
-                        <a href="#">🇷🇼 Kinyarwanda</a>
-                    </div>
-                </div>
-                <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()">
-                    <i class="fas fa-sun"></i>
-                </button>
+  <a class="skip-link" href="#main-content" data-en="Skip to content" data-rw="Jya ku bikubiyemo">Skip to content</a>
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="top-bar">
+        <div class="top-controls">
+          <div class="dropdown">
+            <button class="lang-btn" id="lang-button" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="myDropdown" onclick="toggleDropdown()">
+              <span id="current-language">🇬🇧 EN</span> <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+              <button type="button" data-language="en">🇬🇧 English</button>
+              <button type="button" data-language="rw">🇷🇼 Kinyarwanda</button>
             </div>
+          </div>
+          <button class="theme-btn" id="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch theme" onclick="toggleTheme()">
+            <i class="fas fa-sun" aria-hidden="true"></i>
+          </button>
         </div>
+      </div>
 
-        <div class="profile-wrapper" data-aos="zoom-in" data-aos-duration="1000">
-            <img src="https://github.com/Divish-news/portal/raw/main/1792234860191.jpg" alt="Divin's Profile" class="hero-img">
-        </div>
+      <div class="profile-wrapper">
+        <img src="https://github.com/Divish-news/portal/raw/main/1792234860191.jpg" alt="Portrait of Divin ISHIMWE" class="hero-img" fetchpriority="high">
+      </div>
+      <div class="location-badge"><span class="dot" aria-hidden="true"></span><span data-en="Kigali, Rwanda · Open to opportunities" data-rw="Kigali, Rwanda · Niteguye amahirwe y’akazi">Kigali, Rwanda · Open to opportunities</span></div>
+      <p class="eyebrow" data-en="COMPUTER SCIENCE · SOFTWARE · AI" data-rw="MUDASOBWA · POROGARAMU · AI">COMPUTER SCIENCE · SOFTWARE · AI</p>
+      <h1><span data-en="Muraho! I am" data-rw="Muraho! Nitwa">Muraho! I am</span> Divin ISHIMWE</h1>
+      <p class="hero-intro" data-en="Aspiring AI specialist and software engineer. I am currently studying Computer Science at the University of Rwanda (UR CST), and I am passionate about using Artificial Intelligence, Cybersecurity, and Software Engineering to build impactful technology solutions for Rwanda and beyond." data-rw="Nifuza kuba inzobere muri AI no gukora porogaramu zifasha abantu. Ubu niga Computer Science muri University of Rwanda (UR CST), kandi nshishikajwe no gukoresha AI, Cybersecurity na Software Engineering mu gukemura ibibazo mu Rwanda no hanze yarwo.">Aspiring AI specialist and software engineer. I am currently studying Computer Science at the University of Rwanda (UR CST), and I am passionate about using Artificial Intelligence, Cybersecurity, and Software Engineering to build impactful technology solutions for Rwanda and beyond.</p>
 
-        <div class="location-badge" data-aos="fade-down" data-aos-delay="200">
-            <span class="dot"></span> Kigali, Rwanda · Open to opportunities
-        </div>
-
-        <h1 data-aos="fade-up" data-aos-delay="400">Muraho! I am Divin ISHIMWE</h1>
-        
-        <p data-aos="fade-up" data-aos-delay="600">Aspiring AI Specialist and Software Engineer. I am currently studying Computer Science at the University of Rwanda (UR CST). I am passionate about leveraging Artificial Intelligence, Cybersecurity, and Software Engineering to build impactful technology solutions for Rwanda and beyond.</p>
-        
-        <div class="social-icons" data-aos="fade-up" data-aos-delay="800">
-            <a href="https://www.linkedin.com/in/divin-ishimwe" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/Divish-news" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:divish250@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-
-        <div class="action-buttons" data-aos="fade-up" data-aos-delay="1000">
-            <a href="contact.html" class="btn-white">Get in touch</a>
-            <a href="#experience" class="btn-outline">View Experience</a>
-        </div>
-
-        <a href="#experience" class="scroll-down" data-aos="fade" data-aos-delay="1200">
-            <p>SCROLL DOWN</p>
-            <i class="fas fa-arrow-down"></i>
-        </a>
+      <div class="social-icons" aria-label="Social and contact links">
+        <a href="https://www.linkedin.com/in/divin-ishimwe" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="https://github.com/Divish-news" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="mailto:divish250@gmail.com" aria-label="Email Divin"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+      </div>
+      <div class="action-buttons">
+        <a href="mailto:divish250@gmail.com" class="btn-white" data-en="Get in touch" data-rw="Mwandikire">Get in touch</a>
+        <a href="#projects" class="btn-outline" data-en="Explore projects" data-rw="Reba imishinga">Explore projects</a>
+      </div>
+      <a href="#experience" class="scroll-down"><span data-en="SCROLL TO EXPLORE" data-rw="KOMA HEPFO UREBE">SCROLL TO EXPLORE</span><i class="fas fa-arrow-down" aria-hidden="true"></i></a>
     </section>
 
-    <!-- EXPERIENCE SECTION -->
-    <section class="experience-section" id="experience">
-        <p class="section-subtitle" data-aos="fade-up">// experience</p>
-        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Professional Experience</h2>
-        <div class="title-underline" data-aos="zoom-in" data-aos-delay="200"></div>
-        <p class="section-desc" data-aos="fade-up" data-aos-delay="300">From high school coding clubs to robotics labs — building the foundation one role at a time.</p>
-
-        <div class="timeline">
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-header"><i class="fas fa-briefcase"></i> ES SUMBA</div>
-                    <h3>Computer Science Club Member</h3>
-                    <p class="date-loc"><i class="far fa-calendar"></i> Oct 2025 – 2026 &nbsp; | &nbsp; <i class="fas fa-map-marker-alt"></i> Nyamagabe, Rwanda</p>
-                    <ul class="timeline-list">
-                        <li>Led a team in developing simple web-based projects.</li>
-                        <li>Organized and facilitated coding sessions for fellow students.</li>
-                        <li>Provided technical guidance on HTML, CSS, and JavaScript fundamentals.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-header"><i class="fas fa-briefcase"></i> ISC2</div>
-                    <h3>Cybersecurity Fundamentals Trainee</h3>
-                    <p class="date-loc"><i class="far fa-calendar"></i> Aug 2025 – Sep 2025 &nbsp; | &nbsp; <i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</p>
-                    <ul class="timeline-list">
-                        <li>Completed the Certified in Cybersecurity (CC) course.</li>
-                        <li>Gained foundational knowledge in network security and threat analysis.</li>
-                        <li>Learned incident response and security best practices.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <!-- EXPERIENCE -->
+    <section class="experience-section section-wrap" id="experience">
+      <p class="section-subtitle">// <span data-en="experience" data-rw="ubunararibonye">experience</span></p>
+      <h2 class="section-title" data-en="Experience & Activities" data-rw="Ubunararibonye n’ibikorwa">Experience & Activities</h2>
+      <div class="title-underline"></div>
+      <p class="section-desc" data-en="Learning through student activities, cybersecurity training, and hands-on projects." data-rw="Kwiga binyuze mu bikorwa by’abanyeshuri, amahugurwa ya cybersecurity n’imishinga ngiro.">Learning through student activities, cybersecurity training, and hands-on projects.</p>
+      <div class="timeline">
+        <article class="timeline-item"><div class="timeline-dot" aria-hidden="true"></div><div class="timeline-content">
+          <div class="timeline-header"><i class="fas fa-users" aria-hidden="true"></i> ES SUMBA</div>
+          <h3 data-en="Computer Science Club Member" data-rw="Umunyamuryango wa Computer Science Club">Computer Science Club Member</h3>
+          <p class="date-loc"><i class="far fa-calendar" aria-hidden="true"></i> Oct 2025 – 2026 &nbsp; | &nbsp; <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Nyamagabe, Rwanda</p>
+          <ul class="timeline-list"><li data-en="Led a team in developing simple web-based projects." data-rw="Nakoranaga n’itsinda ku mishinga yoroshye ikoresha urubuga.">Led a team in developing simple web-based projects.</li><li data-en="Organized and facilitated coding sessions for fellow students." data-rw="Nagize uruhare mu masomo ngiro ya coding hamwe n’abandi banyeshuri.">Organized and facilitated coding sessions for fellow students.</li><li data-en="Provided technical guidance on HTML, CSS, and JavaScript fundamentals." data-rw="Nakoresheje HTML, CSS na JavaScript mu myitozo.">Provided technical guidance on HTML, CSS, and JavaScript fundamentals.</li></ul>
+        </div></article>
+        <article class="timeline-item"><div class="timeline-dot" aria-hidden="true"></div><div class="timeline-content">
+          <div class="timeline-header"><i class="fas fa-shield-halved" aria-hidden="true"></i> ISC2</div>
+          <h3 data-en="Cybersecurity Fundamentals Trainee" data-rw="Uwakoze amahugurwa y’ibanze ya Cybersecurity">Cybersecurity Fundamentals Trainee</h3>
+          <p class="date-loc"><i class="far fa-calendar" aria-hidden="true"></i> Aug 2025 – Sep 2025 &nbsp; | &nbsp; <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Kigali, Rwanda</p>
+          <ul class="timeline-list"><li data-en="Completed the Certified in Cybersecurity (CC) learning course." data-rw="Narangiye amasomo ya Certified in Cybersecurity (CC).">Completed the Certified in Cybersecurity (CC) learning course.</li><li data-en="Studied network security and threat analysis fundamentals." data-rw="Nize iby’ibanze by’umutekano w’imiyoboro n’isesengura ry’iterabwoba rya mudasobwa.">Studied network security and threat analysis fundamentals.</li><li data-en="Learned incident-response concepts and security best practices." data-rw="Nize uburyo bwo guhangana n’ibibazo by’umutekano n’imikorere myiza.">Learned incident-response concepts and security best practices.</li></ul>
+        </div></article>
+      </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section class="projects" id="projects">
-        <h2 data-aos="fade-up">My Projects</h2>
-        
-        <!-- 1. MINI MARKET -->
-        <div class="project-card daniel-style" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-image-container">
-                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop" alt="Shopping Cart" class="project-img">
-                <span class="badge">PYTHON CLI PROJECT</span>
-            </div>
-            <div class="card-content">
-                <div class="problem-box">
-                    <strong>PROBLEM</strong> Small local shops and buyers often struggle to calculate exact totals and manage budgets quickly, leading to errors and financial loss.
-                </div>
-                <h3>Mini Market Checkout</h3>
-                <p class="description">A smart shopping cart system that calculates total costs, checks the user's budget, and gives change instantly.</p>
-                <div class="card-footer">
-                    <span class="price">Free to Use</span>
-                    <a href="https://github.com/Divish-news/about-me-python/blob/main/mini_market.py" target="_blank" class="details-btn">View Code →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2. ISUKU RWANDA -->
-        <div class="project-card daniel-style" style="border-left: 5px solid #22c55e;" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-image-container">
-                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800&auto=format&fit=crop" alt="Clean Rwanda" class="project-img">
-                <span class="badge" style="color: #22c55e; border-color: #22c55e;">🌍 SMART CITY PROJECT</span>
-            </div>
-            <div class="card-content">
-                <div class="problem-box">
-                    <strong>PROBLEM</strong> Illegal dumping and missed waste collections in Kigali are hard to track and report, making it difficult for authorities to keep the city clean.
-                </div>
-                <h3>Isuku Rwanda</h3>
-                <p class="description">A smart platform that allows citizens to report waste locations directly to authorities for a cleaner Rwanda.</p>
-                <div class="card-footer">
-                    <span class="price" style="color: #22c55e;">In Development</span>
-                    <a href="#" class="details-btn" style="color: #22c55e; border-color: #22c55e;">Coming Soon →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3. RWANDA YOUTH OPPORTUNITIES -->
-        <div class="project-card daniel-style" style="border-left: 5px solid #eab308;" data-aos="fade-up" data-aos-delay="300">
-            <div class="card-image-container">
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop" alt="Students Studying" class="project-img">
-                <span class="badge" style="color: #eab308; border-color: #eab308;">🎓 EDUCATION & JOBS</span>
-            </div>
-            <div class="card-content">
-                <div class="problem-box">
-                    <strong>PROBLEM</strong> Many talented Rwandan youth miss out on life-changing scholarships, internships, and jobs because opportunities are scattered across different websites.
-                </div>
-                <h3>Rwanda Youth Opportunities</h3>
-                <p class="description">A platform helping Rwandan youth easily find and apply for scholarships, internships, and jobs in one place.</p>
-                <div class="card-footer">
-                    <span class="price" style="color: #eab308;">Coming Soon</span>
-                    <a href="#" class="details-btn" style="color: #eab308; border-color: #eab308;">In Development →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 4. WATER & ELECTRICITY REPORTER -->
-        <div class="project-card daniel-style" style="border-left: 5px solid #3b82f6;" data-aos="fade-up" data-aos-delay="400">
-            <div class="card-image-container">
-                <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?q=80&w=800&auto=format&fit=crop" alt="Water and Electricity" class="project-img">
-                <span class="badge" style="color: #3b82f6; border-color: #3b82f6;">💧⚡ UTILITY INFRASTRUCTURE</span>
-            </div>
-            <div class="card-content">
-                <div class="problem-box" style="background-color: #0f172a; border-color: #1e3a8a; color: #cbd5e1;">
-                    <strong style="color: #3b82f6;">PROBLEM</strong> Citizens often face water shortages or damaged electricity poles but lack a direct, fast way to report these issues to authorities like WASAC or REG.
-                </div>
-                <h3>Water & Electricity Reporter</h3>
-                <p class="description">A smart reporting platform that allows citizens to report water shortages, leaking pipes, electricity outages, and damaged poles with location tracking.</p>
-                <div class="card-footer">
-                    <span class="price" style="color: #3b82f6;">Coming Soon</span>
-                    <a href="#" class="details-btn" style="color: #3b82f6; border-color: #3b82f6;">In Development →</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 5. PERSONAL PORTFOLIO -->
-        <div class="project-card" data-aos="fade-up" data-aos-delay="500">
-            <h3>Personal Portfolio</h3>
-            <p>This website! Built with HTML, CSS, and JavaScript and hosted live on GitHub Pages.</p>
-            <div class="card-footer">
-                <span class="tech" style="background-color: #38bdf8; color: black; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; margin-right: 5px;">HTML</span> 
-                <span class="tech" style="background-color: #38bdf8; color: black; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; margin-right: 5px;">CSS</span> 
-                <span class="tech" style="background-color: #38bdf8; color: black; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold;">JS</span>
-            </div>
-        </div>
+    <!-- PROJECTS -->
+    <section class="projects section-wrap" id="projects">
+      <p class="section-subtitle">// <span data-en="selected work" data-rw="imishinga nahisemo">selected work</span></p>
+      <h2 class="section-title" data-en="Projects I’m Building" data-rw="Imishinga ndimo gukora">Projects I’m Building</h2>
+      <div class="title-underline"></div>
+      <p class="section-desc" data-en="Practical ideas focused on everyday problems. Projects marked in development are not yet live services." data-rw="Ibitekerezo by’ikoranabuhanga bigamije gukemura ibibazo bya buri munsi. Imishinga yanditseho ko ikiri gukorwa ntiratangira gutanga serivisi.">Practical ideas focused on everyday problems. Projects marked in development are not yet live services.</p>
+      <div class="projects-grid">
+        <article class="project-card daniel-style">
+          <div class="card-image-container"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80" alt="Shopping and checkout" class="project-img" loading="lazy"><span class="badge">PYTHON CLI</span></div>
+          <div class="card-content"><div class="problem-box"><strong data-en="PROBLEM" data-rw="IKIBAZO">PROBLEM</strong><span data-en="Manual calculations can make it difficult for small shops and buyers to track totals, budgets, and change." data-rw="Kubara intoki bishobora gutuma amaduka mato n’abaguzi bibagora kumenya igiteranyo, ingengo y’imari n’ayo basubizwa.">Manual calculations can make it difficult for small shops and buyers to track totals, budgets, and change.</span></div><h3>Mini Market Checkout</h3><p class="description" data-en="A Python command-line tool that calculates shopping totals, checks a budget, and calculates change." data-rw="Porogaramu ya Python ibara igiteranyo cy’ibicuruzwa, igenzura ingengo y’imari kandi ikabara amafaranga asubizwa.">A Python command-line tool that calculates shopping totals, checks a budget, and calculates change.</p><div class="tag-row"><span class="tag">Python</span><span class="tag">CLI</span></div><div class="card-footer"><span class="status status-live" data-en="Code available" data-rw="Code irahari">Code available</span><a href="https://github.com/Divish-news/about-me-python/blob/main/mini_market.py" target="_blank" rel="noopener noreferrer" class="details-btn" data-en="View source code ↗" data-rw="Reba code ↗">View source code ↗</a></div></div>
+        </article>
+        <article class="project-card daniel-style project-green">
+          <div class="card-image-container"><img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=80" alt="Waste recycling and cleanliness" class="project-img" loading="lazy"><span class="badge">SMART CITY</span></div>
+          <div class="card-content"><div class="problem-box"><strong data-en="PROBLEM" data-rw="IKIBAZO">PROBLEM</strong><span data-en="Illegal dumping and missed waste collection can be difficult for residents to report and follow up." data-rw="Kujugunya imyanda ahatemewe no kudakusanya imyanda ku gihe bishobora kugora abaturage kubimenyesha no kubikurikirana.">Illegal dumping and missed waste collection can be difficult for residents to report and follow up.</span></div><h3>Isuku Rwanda</h3><p class="description" data-en="A proposed platform for reporting waste hotspots and collection issues to support cleaner communities." data-rw="Urubuga ruteganyijwe rwo kumenyesha ahajugunywe imyanda n’ibibazo byo kutayikusanya, hagamijwe isuku mu baturage.">A proposed platform for reporting waste hotspots and collection issues to support cleaner communities.</p><div class="tag-row"><span class="tag">Civic tech</span><span class="tag">Environment</span></div><div class="card-footer"><span class="status status-progress" data-en="In development" data-rw="Iracyakorwa">In development</span><span class="details-btn disabled-link" aria-disabled="true" data-en="Not live yet" data-rw="Ntiratangira gukora">Not live yet</span></div></div>
+        </article>
+        <article class="project-card daniel-style project-yellow">
+          <div class="card-image-container"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80" alt="Students learning together" class="project-img" loading="lazy"><span class="badge">EDUCATION & CAREERS</span></div>
+          <div class="card-content"><div class="problem-box"><strong data-en="PROBLEM" data-rw="IKIBAZO">PROBLEM</strong><span data-en="Scholarships, internships, and entry-level jobs are scattered across many websites, making them hard to track." data-rw="Buruse, amahugurwa yo mu kazi n’akazi ku batangiye bikunze kuba ku mbuga nyinshi, bigatuma kubikurikirana bigorana.">Scholarships, internships, and entry-level jobs are scattered across many websites, making them hard to track.</span></div><h3>Rwanda Youth Opportunities</h3><p class="description" data-en="A planned hub to help young people discover scholarships, internships, and jobs in one place." data-rw="Urubuga ruteganyijwe ruzafasha urubyiruko kubona buruse, amahugurwa yo mu kazi n’akazi ahantu hamwe.">A planned hub to help young people discover scholarships, internships, and jobs in one place.</p><div class="tag-row"><span class="tag">Youth</span><span class="tag">Opportunities</span></div><div class="card-footer"><span class="status status-progress" data-en="In development" data-rw="Iracyakorwa">In development</span><span class="details-btn disabled-link" aria-disabled="true" data-en="Not live yet" data-rw="Ntiratangira gukora">Not live yet</span></div></div>
+        </article>
+        <article class="project-card daniel-style project-blue">
+          <div class="card-image-container"><img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=900&q=80" alt="Water and utility infrastructure" class="project-img" loading="lazy"><span class="badge">💧 UTILITIES & CIVIC TECH</span></div>
+          <div class="card-content"><div class="problem-box"><strong data-en="PROBLEM" data-rw="IKIBAZO">PROBLEM</strong><span data-en="Residents need a clear way to record water disruptions, leaking pipes, power outages, and damaged poles." data-rw="Abaturage bakeneye uburyo bworoshye bwo kumenyesha ibura ry’amazi, imiyoboro itemba, umuriro wabuze n’ibiti by’amashanyarazi byangiritse.">Residents need a clear way to record water disruptions, leaking pipes, power outages, and damaged poles.</span></div><h3>Water & Electricity Reporter</h3><p class="description" data-en="A planned reporting platform with issue categories, location details, and report-status tracking. Reports will not reach WASAC or REG until an appropriate backend or official integration is built." data-rw="Urubuga ruteganyijwe rwo kumenyesha ibibazo, kugaragaza aho byabereye no gukurikirana uko raporo ihagaze. Raporo ntizajya kuri WASAC cyangwa REG hatarubakwa uburyo bwo kuzohereza cyangwa ubufatanye bwemewe.">A planned reporting platform with issue categories, location details, and report-status tracking. Reports will not reach WASAC or REG until an appropriate backend or official integration is built.</p><div class="tag-row"><span class="tag">Web app</span><span class="tag">Location</span><span class="tag">Civic tech</span></div><div class="card-footer"><span class="status status-progress" data-en="In development" data-rw="Iracyakorwa">In development</span><span class="details-btn disabled-link" aria-disabled="true" data-en="Not live yet" data-rw="Ntiratangira gukora">Not live yet</span></div></div>
+        </article>
+        <article class="project-card daniel-style">
+          <div class="portfolio-icon"><i class="fas fa-laptop-code" aria-hidden="true"></i></div><div class="card-content"><h3 data-en="Personal Portfolio" data-rw="Urubuga rwanjye bwite">Personal Portfolio</h3><p class="description" data-en="This portfolio showcases my learning journey, projects, skills, and certifications. Built with HTML, CSS, and JavaScript." data-rw="Uru rubuga rugaragaza ibyo niga, imishinga, ubumenyi n’impamyabumenyi mfite. Rwubatswe na HTML, CSS na JavaScript.">This portfolio showcases my learning journey, projects, skills, and certifications. Built with HTML, CSS, and JavaScript.</p><div class="tag-row"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">GitHub Pages</span></div><div class="card-footer"><span class="status status-live" data-en="Live website" data-rw="Urubuga rukora">Live website</span><a href="https://github.com/Divish-news/portal" target="_blank" rel="noopener noreferrer" class="details-btn" data-en="View repository ↗" data-rw="Reba repository ↗">View repository ↗</a></div></div>
+        </article>
+      </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section class="skills-section">
-        <p class="section-subtitle" data-aos="fade-up">// skills</p>
-        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">Skills & Expertise</h2>
-        <div class="title-underline" data-aos="zoom-in" data-aos-delay="200"></div>
-        <p class="section-desc" data-aos="fade-up" data-aos-delay="300">Full-stack foundations, prompt engineering as a superpower, and a cybersecurity background to keep it secure.</p>
-
-        <div class="skills-grid">
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="skill-header">
-                    <div class="skill-title"><i class="fas fa-robot"></i> AI & PROMPT</div>
-                    <span class="skill-badge">CORE EDGE</span>
-                </div>
-                <div class="skill-tags">
-                    <span class="tag highlight"><span class="tag-dot"></span>ChatGPT API</span>
-                    <span class="tag highlight"><span class="tag-dot"></span>Claude AI</span>
-                    <span class="tag highlight"><span class="tag-dot"></span>RAG</span>
-                    <span class="tag">Prompt Design</span>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="skill-header">
-                    <div class="skill-title"><i class="fas fa-code"></i> LANGUAGES</div>
-                </div>
-                <div class="skill-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">C</span>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="skill-header">
-                    <div class="skill-title"><i class="fas fa-database"></i> DATABASES</div>
-                </div>
-                <div class="skill-tags">
-                    <span class="tag">MySQL</span>
-                    <span class="tag">SQLite</span>
-                    <span class="tag">Python Flask</span>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="skill-header">
-                    <div class="skill-title"><i class="fas fa-shield-alt"></i> CYBERSECURITY</div>
-                </div>
-                <div class="skill-tags">
-                    <span class="tag">Network Security</span>
-                    <span class="tag">Threat Analysis</span>
-                </div>
-            </div>
-            <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
-                <div class="skill-header">
-                    <div class="skill-title"><i class="fas fa-globe"></i> LANGUAGES SPOKEN</div>
-                </div>
-                <div class="skill-tags">
-                    <span class="tag">Kinyarwanda</span>
-                    <span class="tag">English</span>
-                    <span class="tag">French</span>
-                </div>
-            </div>
-        </div>
+    <!-- SKILLS -->
+    <section class="skills-section section-wrap" id="skills">
+      <p class="section-subtitle">// <span data-en="skills" data-rw="ubumenyi">skills</span></p><h2 class="section-title" data-en="Skills & Expertise" data-rw="Ubumenyi n’ubushobozi">Skills & Expertise</h2><div class="title-underline"></div><p class="section-desc" data-en="Tools and topics I have studied or practised. I’m continuing to develop these skills through projects." data-rw="Ibikoresho n’amasomo nize cyangwa nakoresheje mu myitozo. Ndakomeza kunoza ubu bumenyi binyuze mu mishinga.">Tools and topics I have studied or practised. I’m continuing to develop these skills through projects.</p>
+      <div class="skills-grid">
+        <article class="skill-card"><div class="skill-header"><div class="skill-title"><i class="fas fa-robot" aria-hidden="true"></i> AI & PROMPTING</div><span class="skill-badge">LEARNING</span></div><div class="skill-tags"><span class="tag highlight">Prompt design</span><span class="tag">ChatGPT API</span><span class="tag">Claude AI</span><span class="tag">RAG concepts</span></div></article>
+        <article class="skill-card"><div class="skill-header"><div class="skill-title"><i class="fas fa-code" aria-hidden="true"></i> PROGRAMMING</div></div><div class="skill-tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">C</span></div></article>
+        <article class="skill-card"><div class="skill-header"><div class="skill-title"><i class="fas fa-database" aria-hidden="true"></i> DATABASES & BACKEND</div></div><div class="skill-tags"><span class="tag">MySQL</span><span class="tag">SQLite</span><span class="tag">Flask concepts</span></div></article>
+        <article class="skill-card"><div class="skill-header"><div class="skill-title"><i class="fas fa-shield-halved" aria-hidden="true"></i> CYBERSECURITY</div></div><div class="skill-tags"><span class="tag">Network security</span><span class="tag">Threat analysis</span><span class="tag">Security fundamentals</span></div></article>
+        <article class="skill-card"><div class="skill-header"><div class="skill-title"><i class="fas fa-language" aria-hidden="true"></i> LANGUAGES SPOKEN</div></div><div class="skill-tags"><span class="tag">Kinyarwanda</span><span class="tag">English</span><span class="tag">French</span></div></article>
+      </div>
     </section>
 
-    <!-- CERTIFICATIONS SECTION -->
-    <section class="certs-section">
-        <div class="section-header" data-aos="fade-up">
-            <div class="section-icon"><i class="fas fa-shield-alt"></i></div>
-            <h2 class="section-title" style="text-align: left; margin: 0;">Certifications</h2>
-        </div>
-
-        <div class="certs-grid">
-            <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="cert-icon blue"><i class="fas fa-shield-halved"></i></div>
-                <div class="cert-info">
-                    <h3>Certified in Cybersecurity (CC)</h3>
-                    <p>ISC2</p>
-                </div>
-                <div class="cert-year">2025</div>
-                <a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
-            </div>
-            <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="cert-icon yellow"><i class="fas fa-network-wired"></i></div>
-                <div class="cert-info">
-                    <h3>HCIA-Datacom</h3>
-                    <p>Huawei ICT Academy</p>
-                </div>
-                <div class="cert-year">2026</div>
-                <a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
-            </div>
-            <div class="cert-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="cert-icon green"><i class="fas fa-robot"></i></div>
-                <div class="cert-info">
-                    <h3>Google AI Essentials</h3>
-                    <p>Google</p>
-                </div>
-                <div class="cert-year">2026</div>
-                <a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
-            </div>
-            <div class="cert-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="cert-icon purple"><i class="fas fa-briefcase"></i></div>
-                <div class="cert-info">
-                    <h3>Cybersecurity Job Simulation</h3>
-                    <p>Mastercard & Forage</p>
-                </div>
-                <div class="cert-year">2026</div>
-                <a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
-            </div>
-            <div class="cert-card" data-aos="fade-up" data-aos-delay="500">
-                <div class="cert-icon red"><i class="fas fa-code"></i></div>
-                <div class="cert-info">
-                    <h3>Responsive Web Design</h3>
-                    <p>freeCodeCamp</p>
-                </div>
-                <div class="cert-year">2026</div>
-                <a href="#" class="cert-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FLOATING BUTTONS -->
-    <a href="https://wa.me/250783370320" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    <a href="#" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <!-- AOS JS Library Initialization -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true
-        });
-
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            const icon = document.querySelector('#theme-toggle i');
-            if (document.body.classList.contains('light-mode')) {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            } else {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            }
-        }
-
-        function toggleDropdown() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.lang-btn') && !event.target.matches('.lang-btn *')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
-</body>
-                    </html>
-    
+    <!-- CERTIFICATIONS -->
+    <section class="certs-section section-wrap" id="certifications">
+      <div class="section-header"><div class="section-icon"><i class="fas fa-award" aria-hidden="true"></i></div><div><p class="section-subtitle">// <span data-en="learning milestones" data-rw="ibyemezo by’amasomo">learning milestones</span></p><h2 class="section-title" data-en="Certifications & Courses" data-rw="Impamyabumenyi n’amahugurwa">Certifications & Courses</h2></div></div>
+      <p class="section-desc cert-desc" data-en="Add your official certificate or verification URL to each card when available." data-rw="Ongeraho umurongo wemewe w’impamyabumenyi kuri buri cyemezo igihe uzaba uwufite.">Add your official certificate or verification URL to each card when available.</p>
+      <div class="certs-grid">
+        <article class="cert-card"><div class=
