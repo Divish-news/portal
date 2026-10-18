@@ -1,52 +1,84 @@
-// =========================================
-// 1. CONTACT BUTTON ALERT (From your old code)
-// =========================================
-const contactButton = document.getElementById("contact-btn");
+(() => {
+  const body = document.body;
+  const themeButton = document.getElementById('theme-toggle');
+  const themeIcon = themeButton?.querySelector('i');
+  const dropdown = document.getElementById('myDropdown');
+  const languageButton = document.getElementById('lang-button');
+  const currentLanguage = document.getElementById('current-language');
+  const backToTop = document.getElementById('back-to-top');
 
-// Check if the button exists on the page before adding the click event
-if (contactButton) {
-    contactButton.addEventListener("click", function() {
-        alert("Contact Divin ISHIMWE:\n\n📞 Phone: 0783370320\n📧 Email: divish250@gmail.com");
+  // Apply saved preferences safely; defaults are dark mode and English.
+  function applyTheme(theme) {
+    const light = theme === 'light';
+    body.classList.toggle('light-mode', light);
+    if (themeIcon) {
+      themeIcon.classList.toggle('fa-moon', light);
+      themeIcon.classList.toggle('fa-sun', !light);
+    }
+    if (themeButton) {
+      themeButton.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
+      themeButton.setAttribute('title', light ? 'Switch to dark mode' : 'Switch to light mode');
+    }
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', light ? '#f8fafc' : '#05050f');
+  }
+
+  window.toggleTheme = function toggleTheme() {
+    const nextTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
+    applyTheme(nextTheme);
+    try { localStorage.setItem('portfolio-theme', nextTheme); } catch (_) { /* storage may be unavailable */ }
+  };
+
+  try { applyTheme(localStorage.getItem('portfolio-theme') || 'dark'); }
+  catch (_) { applyTheme('dark'); }
+
+  // Language switcher: all elements with data-en/data-rw are translated together.
+  function setLanguage(language) {
+    const lang = language === 'rw' ? 'rw' : 'en';
+    document.documentElement.lang = lang === 'rw' ? 'rw' : 'en';
+    document.querySelectorAll('[data-en][data-rw]').forEach((element) => {
+      const value = element.dataset[lang];
+      if (typeof value === 'string') element.textContent = value;
     });
-}
+    if (currentLanguage) currentLanguage.textContent = lang === 'rw' ? '🇷🇼 RW' : '🇬🇧 EN';
+    if (languageButton) languageButton.setAttribute('aria-label', lang === 'rw' ? 'Hindura ururimi' : 'Change language');
+    dropdown?.classList.remove('show');
+    languageButton?.setAttribute('aria-expanded', 'false');
+    try { localStorage.setItem('portfolio-language', lang); } catch (_) { /* storage may be unavailable */ }
+  }
 
-// =========================================
-// 2. DARK / LIGHT THEME TOGGLE
-// =========================================
-function toggleTheme() {
-    // Toggle the 'light-mode' class on the body
-    document.body.classList.toggle('light-mode');
-    
-    // Find the icon inside the theme button
-    const icon = document.querySelector('#theme-toggle i');
-    
-    // Change the icon based on the current mode
-    if (document.body.classList.contains('light-mode')) {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-    } else {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
+  window.toggleDropdown = function toggleDropdown() {
+    if (!dropdown) return;
+    const isOpen = dropdown.classList.toggle('show');
+    languageButton?.setAttribute('aria-expanded', String(isOpen));
+  };
+
+  dropdown?.querySelectorAll('[data-language]').forEach((button) => {
+    button.addEventListener('click', () => setLanguage(button.dataset.language));
+  });
+  document.addEventListener('click', (event) => {
+    if (dropdown?.classList.contains('show') && !event.target.closest('.dropdown')) {
+      dropdown.classList.remove('show');
+      languageButton?.setAttribute('aria-expanded', 'false');
     }
-}
-
-// =========================================
-// 3. LANGUAGE DROPDOWN MENU
-// =========================================
-function toggleDropdown() {
-    // Toggle the 'show' class on the dropdown content
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks anywhere outside of it
-window.onclick = function(event) {
-    if (!event.target.matches('.lang-btn') && !event.target.matches('.lang-btn *')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        for (var i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && dropdown?.classList.contains('show')) {
+      dropdown.classList.remove('show');
+      languageButton?.setAttribute('aria-expanded', 'false');
+      languageButton?.focus();
     }
-}
+  });
+
+  try { setLanguage(localStorage.getItem('portfolio-language') || 'en'); }
+  catch (_) { setLanguage('en'); }
+
+  // Reveal the back-to-top control only after the visitor scrolls down.
+  function updateBackToTop() {
+    backToTop?.classList.toggle('visible', window.scrollY > 450);
+  }
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  updateBackToTop();
+
+  const year = document.getElementById('current-year');
+  if (year) year.textContent = new Date().getFullYear();
+})();
